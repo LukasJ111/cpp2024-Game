@@ -1,5 +1,7 @@
 # C++ Projektas
 
+https://bigosaur.com/engine.pdf
+
 Backendas:
 Frontendas:
 
