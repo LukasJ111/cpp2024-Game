@@ -12,12 +12,12 @@ SDL2
 #TO-DO Back-end
 
 Components Game-loop / classes:
-- Manging resources
+- Manging resources Audrius
 - Handlint inputa
 - Drwaing graphics
 - Playing music / sound effects
 - Menu (Sound, graphics...)
-- Storing user data
+- Storing user data Audrius
 
 #TO-DO Front-end
 
