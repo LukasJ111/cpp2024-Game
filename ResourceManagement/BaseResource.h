@@ -14,17 +14,6 @@ namespace ResourceMng {
         virtual ~BaseResource() {}
     };
 
-    class TextureResource : public BaseResource {
-    private:
-        SDL_Texture* texture;
-    public:
-        TextureResource(SDL_Texture* texture) : texture(texture) {}
-        ~TextureResource() {
-            SDL_DestroyTexture(texture);
-        }
-        SDL_Texture* getTexture() const { return texture; }
-    };
-
 } // namespace ResourceMng
 
 #endif //MISKAS_BASERESOURCE_H
