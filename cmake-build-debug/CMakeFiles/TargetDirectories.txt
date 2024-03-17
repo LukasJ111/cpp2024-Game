@@ -1,3 +1,0 @@
-C:/Users/Acer/Documents/UNI/II_Semestras2024/CPP/Miskas/cmake-build-debug/CMakeFiles/Miskas.dir
-C:/Users/Acer/Documents/UNI/II_Semestras2024/CPP/Miskas/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Acer/Documents/UNI/II_Semestras2024/CPP/Miskas/cmake-build-debug/CMakeFiles/rebuild_cache.dir

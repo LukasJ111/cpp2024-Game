@@ -2,7 +2,7 @@
 /build/
 /cmake-build-debug/
 /cmake-build-release/
-
+.idea
 # Ignore all files with the following extensions
 *.o
 *.obj
