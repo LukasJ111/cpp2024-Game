@@ -257,11 +257,23 @@ Miskas_SOURCE_DIR:STATIC=C:/Users/Acer/Documents/UNI/II_Semestras2024/CPP/Miskas
 //Path to a library.
 SDL2MAIN_LIBRARY:FILEPATH=C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a
 
+//The directory containing a CMake configuration file for SDL2.
+SDL2_DIR:PATH=C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/cmake/SDL2
+
+//Path to a file.
+SDL2_IMAGE_INCLUDE_DIR:PATH=SDL2_IMAGE_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+SDL2_IMAGE_LIBRARY:FILEPATH=C:/Dev/SDL2_image-2.8.2/x86_64-w64-mingw32/lib/libSDL2_image.dll.a
+
 //Path to a file.
 SDL2_INCLUDE_DIR:PATH=C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/include/SDL2
 
 //Where the SDL2 Library can be found
 SDL2_LIBRARY:STRING=mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2.dll.a
+
+//The directory containing a CMake configuration file for SDL2_image.
+SDL2_image_DIR:PATH=C:/Dev/SDL2_image-2.8.2/cmake
 
 
 ########################
@@ -428,7 +440,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 FIND_PACKAGE_MESSAGE_DETAILS_SDL2:INTERNAL=[mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2.dll.a][C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/include/SDL2][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-SDL2_LIBRARY_TEMP:INTERNAL=mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2.dll.a
+SDL2_LIBRARY_TEMP:INTERNAL=mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;mingw32;-mwindows;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2main.a;C:/Dev/SDL2-2.30.1/x86_64-w64-mingw32/lib/libSDL2.dll.a
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 
