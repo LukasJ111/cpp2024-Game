@@ -4,6 +4,8 @@ Mes planuojame sukurti žaidimą pagrinde naudojantis SDL2 grafine biblioteka.
 Bus palaikomas C++17 standartas.
 Darbo procesui įkvėpimą davė [ši prezentacija](https://bigosaur.com/engine.pd).
 
+Svarbiausi pakeitimai kurie leičia žaidimą yra master atšakoje (kai žaidimas bus paruoštas, master šaka taps pagrindinė).
+
 # Komanda ir atsakomybės
 Audrius Kralikas - duomenų valdymas, "back-endinės" operacijos
 Kipras Gnižinskas - žaidimo grafikos, grafinė sąveika, žaidimo pasakojimo kryptis
