@@ -1,5 +1,8 @@
 #include "game_loop.hpp"
 
+SDL_Texture* playerTex;
+
+
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
 
@@ -9,7 +12,6 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
     if(fullscreen){
         flags = SDL_WINDOW_FULLSCREEN;
     }
-
 
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0){
         std::cout  << "Game is running.\n";
@@ -28,6 +30,10 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
         }
 
         is_running = true;
+
+        SDL_Surface* temp_surface = IMG_Load("assets/player.png");
+        playerTex = SDL_CreateTextureFromSurface(renderer, temp_surface);
+        SDL_FreeSurface(temp_surface);
 
     } else{
         is_running = false;
@@ -60,6 +66,7 @@ void game_loop::render() {
     SDL_RenderClear(renderer);
 
     // append render after this
+    SDL_RenderCopy(renderer, playerTex, NULL, NULL);
     SDL_RenderPresent(renderer);
 }
 
