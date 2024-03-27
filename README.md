@@ -1,44 +1,15 @@
-# C++ Projektas
+# C++ Komandinis projektas - Žaidimas
 
-https://bigosaur.com/engine.pdf
+Mes planuojame sukurti žaidimą pagrinde naudojantis SDL2 grafine biblioteka.
+Bus palaikomas C++17 standartas.
+Darbo procesui įkvėpimą davė [ši prezentacija](https://bigosaur.com/engine.pd).
 
-Backendas:
-Frontendas:
+# Komanda ir atsakomybės
+Audrius Kralikas - duomenų valdymas, "back-endinės" operacijos
+Kipras Gnižinskas - žaidimo grafikos, grafinė sąveika, žaidimo pasakojimo kryptis
+Kipras Kazarinas - žaidimo grafikos, dinaminis judėjimas žaidime, žaidimo pasakojimo kryptis
+Lukas Jasiulionis - architektas, vaizdo grafikų sąsajų kūrėjas
 
-#Tools
+# Apie patį žaidimą
 
-SDL2
-
-#TO-DO Back-end
-
-Components Game-loop / classes:
-- Manging resources
-- Handlint inputa
-- Drwaing graphics
-- Playing music / sound effects
-- Menu (Sound, graphics...)
-- Storing user data
-
-#TO-DO Front-end
-
-Settings class:
-- Save / load
-- Volume settings
-- Resoultion
-
-Rendering:
-- 2D Lighting
-- Menu UI
-
-Weapon class
-- Weapon damage
-- Swing animation
-- Swing range (hitbox)
-- Swing speed (?)
-- Knockback (?)
-
-Environment overlay
-
-Enemy class
-- Following player
-- Display
+*Bus papildyta Kiprų*
