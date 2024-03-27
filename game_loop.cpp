@@ -1,7 +1,7 @@
 #include "game_loop.hpp"
 
 SDL_Texture* playerTex;
-
+SDL_Rect srcR, destR;
 
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
@@ -14,13 +14,8 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
     }
 
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0){
-        std::cout  << "Game is running.\n";
 
         window = SDL_CreateWindow(title, x_pos, y_pos, width, height, flags);
-
-        if(window){
-            std::cout << "Window booted properly.\n";
-        }
 
         renderer = SDL_CreateRenderer(window, -1, 0);
 
@@ -31,13 +26,12 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
         is_running = true;
 
-        SDL_Surface* temp_surface = IMG_Load("assets/player.png");
-        playerTex = SDL_CreateTextureFromSurface(renderer, temp_surface);
-        SDL_FreeSurface(temp_surface);
+    } 
 
-    } else{
-        is_running = false;
-    }
+    SDL_Surface* temp_surface = IMG_Load("assets/player.png");
+    playerTex = SDL_CreateTextureFromSurface(renderer, temp_surface);
+    SDL_FreeSurface(temp_surface);
+
 
 }
 
@@ -58,15 +52,13 @@ void game_loop::handle_events(){
 }
 
 void game_loop::update() {
-    count++;
-    std::cout << count << std::endl;
+    destR.h = 32;
+    destR.w = 184;
 }
 
 void game_loop::render() {
     SDL_RenderClear(renderer);
-
-    // append render after this
-    SDL_RenderCopy(renderer, playerTex, NULL, NULL);
+    SDL_RenderCopy(renderer, playerTex, NULL, &destR);
     SDL_RenderPresent(renderer);
 }
 
@@ -74,5 +66,6 @@ void game_loop::clean(){
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
+    IMG_Quit();
     std::cout << "Exiting game.\n";
 }
