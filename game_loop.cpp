@@ -1,4 +1,5 @@
 #include "game_loop.hpp"
+#include "texture_manager.h"
 
 SDL_Texture* playerTex;
 SDL_Rect srcR, destR;
@@ -28,10 +29,7 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     } 
 
-    SDL_Surface* temp_surface = IMG_Load("assets/player.png");
-    playerTex = SDL_CreateTextureFromSurface(renderer, temp_surface);
-    SDL_FreeSurface(temp_surface);
-
+    playerTex = texture_manager::LoadTexture("assets/player.png", renderer); // simple loading
 
 }
 
@@ -54,6 +52,8 @@ void game_loop::handle_events(){
 void game_loop::update() {
     destR.h = 32;
     destR.w = 184;
+
+    destR.x++; // Moving
 }
 
 void game_loop::render() {

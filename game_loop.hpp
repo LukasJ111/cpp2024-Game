@@ -20,7 +20,6 @@ public:
     };
 
 private:
-    int count = 0;
     bool is_running;
     SDL_Window *window;
     SDL_Renderer *renderer;
