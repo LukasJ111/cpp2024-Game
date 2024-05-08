@@ -1,0 +1,6 @@
+# ninja log v5
+1	907	7368901044123102	CMakeFiles/cpp2024_Game.dir/item.cpp.obj	b64d390ae3becec0
+30	922	7368901044272823	CMakeFiles/cpp2024_Game.dir/player.cpp.obj	d5fa6fbe3fcd7f8
+15	931	7368901044372826	CMakeFiles/cpp2024_Game.dir/game_loop.cpp.obj	3e89affa928281b4
+46	945	7368901044512851	CMakeFiles/cpp2024_Game.dir/main.cpp.obj	5984a5e3ffee1b1c
+89	1014	7368901045213981	CMakeFiles/cpp2024_Game.dir/texture_manager.cpp.obj	5d834a5d7ba36d03

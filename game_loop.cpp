@@ -29,7 +29,7 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     } 
 
-    playerTex = texture_manager::LoadTexture("assets/player.png", renderer); // simple loading
+    playerTex = texture_manager::LoadTexture("assets/a.png", renderer); // simple loading
 
 }
 

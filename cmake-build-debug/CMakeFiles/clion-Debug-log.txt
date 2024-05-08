@@ -1,0 +1,1 @@
+CMakeLists.txt not found in C:\Users\kipra\Desktop\game shit\New folder\cpp2024-Game Select CMakeLists.txt
