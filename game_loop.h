@@ -1,9 +1,10 @@
-#ifndef game_loop_hpp
-#define  game_loop_hpp
+#ifndef game_loop_h
+#define  game_loop_h
 
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+
 class game_loop{
 
 public:

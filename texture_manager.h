@@ -1,6 +1,6 @@
 #pragma once
 
-#include "game_loop.hpp"
+#include "game_loop.h"
 
 class texture_manager {
 

@@ -1,12 +1,13 @@
-#ifndef player_hpp
-#define  player_hpp
+#ifndef player_h
+#define  player_h
 
-#include <texture_manager.h>
+//#include "texture_manager.h"
 #include <string>
-#include <item.hpp>
+#include "item.h"
 #include <SDL2/SDL_events.h>
+#include "game_object.h"
 
-class player{
+class Player : public game_object {
 
 public:
 
@@ -17,8 +18,8 @@ public:
     int speed;
 
 public:
-    player(const char* file, SDL_Renderer* ren);
-    ~player();
+    Player(const char* texturesheet, SDL_Renderer* ren);
+    ~Player();
 
 
     // Animations
@@ -32,6 +33,10 @@ public:
     void player_take_damage(int damage);    // Slow player after taking damage :D
     void player_heal(int heal);             // Regeneration effect later in game loop logic (once every N seconds n stuff)
     void player_add_item(item weapon);
+
+    SDL_Texture* objTexture;
+    SDL_Rect srcRect, destRect;
+    SDL_Renderer* renderer;
 
 };
 

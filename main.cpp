@@ -1,4 +1,4 @@
-#include "game_loop.hpp"
+#include "game_loop.h"
 
 game_loop *game = nullptr;
 
@@ -9,7 +9,6 @@ int main( int argc, char *argv[] )
     const int frameDelay = 1000 / FPS; // Max time between frames
     Uint32 frameStart;
     int frameTime;
-
 
     game = new game_loop();
 
