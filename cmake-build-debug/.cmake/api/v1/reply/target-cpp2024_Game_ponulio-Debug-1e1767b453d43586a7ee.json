@@ -76,23 +76,23 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/."
+					"path" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio/."
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets"
+					"path" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio/assets"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src"
+					"path" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio/src"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include"
+					"path" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio/src/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+					"path" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio/src/include/SDL2"
 				}
 			],
 			"language" : "CXX",

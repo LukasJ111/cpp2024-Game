@@ -6,6 +6,8 @@
 
 Player* player;
 
+SDL_Renderer* game_loop::renderer=nullptr;
+
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
 
@@ -31,7 +33,7 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     } 
 
-    player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", renderer, 0 ,0); // simple loading
+    player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
 
 }
 

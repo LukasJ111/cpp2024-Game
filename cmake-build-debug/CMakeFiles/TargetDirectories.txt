@@ -1,3 +1,3 @@
-C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/cmake-build-debug/CMakeFiles/cpp2024_Game_ponulio.dir
-C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/kipra/Desktop/cpp2024-Game-ponulio/cmake-build-debug/CMakeFiles/cpp2024_Game_ponulio.dir
+C:/Users/kipra/Desktop/cpp2024-Game-ponulio/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kipra/Desktop/cpp2024-Game-ponulio/cmake-build-debug/CMakeFiles/rebuild_cache.dir

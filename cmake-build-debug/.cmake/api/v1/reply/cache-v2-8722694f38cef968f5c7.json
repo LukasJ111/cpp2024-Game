@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/cmake-build-debug"
+			"value" : "c:/Users/kipra/Desktop/cpp2024-Game-ponulio/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game"
+			"value" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1275,7 +1275,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/cmake-build-debug"
+			"value" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio/cmake-build-debug"
 		},
 		{
 			"name" : "cpp2024_Game_ponulio_IS_TOP_LEVEL",
@@ -1299,7 +1299,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game"
+			"value" : "C:/Users/kipra/Desktop/cpp2024-Game-ponulio"
 		}
 	],
 	"kind" : "cache",

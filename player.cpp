@@ -1,8 +1,8 @@
 #include "player.h"
 #include "item.h"
 
-Player::Player(const char* texturesheet, SDL_Renderer* ren, int x, int y)
-        : game_object(texturesheet, ren, x, y){
+Player::Player(const char* texturesheet, int x, int y)
+        : game_object(texturesheet, x, y){
     health = 5;                         // hit-points
     speed = 60;                         // Irrelevant speed number for now
 }
@@ -30,7 +30,7 @@ void Player::player_add_item(item weapon){
 
 // Kipras and Kipras need to handle this logic (based off how they want to render the pngs)
 void Player::set_player_texture(const char* file, SDL_Renderer* ren){
-    objTexture = texture_manager::LoadTexture(file, ren);
+    objTexture = texture_manager::LoadTexture(file);
 }
 
 void Player::animate_player_attack(const char* sheet, SDL_Renderer* ren, item weapon, int x, int y){

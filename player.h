@@ -16,7 +16,7 @@ public:
     int speed;
 
 public:
-    Player(const char* texturesheet, SDL_Renderer* ren, int x, int y);
+    Player(const char* texturesheet, int x, int y);
     ~Player();
 
 
