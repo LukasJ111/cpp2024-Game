@@ -2,6 +2,7 @@
 #include "texture_manager.h"
 #include "player.h"
 #include "Map.h"
+#include "Collision.h"
 
 #include "ECS/Components.h"
 #include "ECS/ECS.h"
@@ -15,7 +16,18 @@ Manager manager;
 SDL_Renderer* game_loop::renderer=nullptr;
 SDL_Event game_loop::event;
 
+std::vector<ColliderComponent*> game_loop::colliders;
+
 auto& player(manager.addEntity());
+auto& wall(manager.addEntity());
+
+enum groupLabels : std::size_t
+{
+    groupMap,
+    groupPlayers,
+    groupEnemies,
+    groupColliders
+};
 
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
@@ -44,12 +56,23 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     //player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
     map=new Map();
+    
+    // LAIKINAI PAKEICIAU I 32 X 32 (is 16 x 16) ir pridejau kita laikina faila (prirasiau TEMP) KAD GERIAU MINIMALIAI ATRODYTU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    Map::LoadMap("assets/Map/TEMPp16x16.map", 32, 32);
 
-    player.addComponent<TransformComponent>(300, 200);
-    player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png");
+    player.addComponent<TransformComponent>(2);
+    player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerAnims.png", true);
     player.addComponent<KeyboardController>();
+    player.addComponent<ColliderComponent>("player");
+    player.addGroup(groupPlayers);
+
+    wall.addComponent<TransformComponent>(300.0f, 300.0f, 300, 20, 1);
+    wall.addComponent<SpriteComponent>("assets/Map/dirt.png");
+    wall.addComponent<ColliderComponent>("wall");
+    wall.addGroup(groupMap);
 
 }
+
 
 void game_loop::handle_events(){
 
@@ -72,12 +95,35 @@ void game_loop::update() {
     manager.refresh();
     manager.update();
 
+    for (auto cc : colliders)
+    {
+        Collision::AABB(player.getComponent<ColliderComponent>(), *cc);
+    }
 }
 
-void game_loop::render() {
+auto& tiles(manager.getGroup(groupMap));
+auto& players(manager.getGroup(groupPlayers));
+auto& enemies(manager.getGroup(groupEnemies));
+
+
+void game_loop::render() 
+{
     SDL_RenderClear(renderer);
-    map->DrawMap(); // map draw'inam pirma, kad zaidejas/kiti objektai butu vaizduojamas ANT jo, o ne PO juo.
-    manager.draw();
+
+    for (auto& t : tiles)
+    {
+        t->draw();
+    }
+
+    for (auto& p : players)
+    {
+        p->draw();
+    }
+
+    for (auto& e : enemies)
+    {
+        e->draw();
+    }
     SDL_RenderPresent(renderer);
 }
 
@@ -87,4 +133,11 @@ void game_loop::clean(){
     SDL_Quit();
     IMG_Quit();
     std::cout << "Exiting game.\n";
+}
+
+void game_loop::AddTile(int id, int x, int y)
+{
+    auto& tile(manager.addEntity());
+    tile.addComponent<TileComponent>(x, y, 32, 32, id);
+    tile.addGroup(groupMap);
 }
