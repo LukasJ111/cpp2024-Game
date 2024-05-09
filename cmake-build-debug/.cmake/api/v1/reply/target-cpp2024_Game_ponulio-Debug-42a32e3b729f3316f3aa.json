@@ -305,7 +305,9 @@
 				146,
 				148,
 				150,
-				151
+				151,
+				152,
+				153
 			]
 		},
 		{
@@ -1083,12 +1085,22 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "ECS.h",
+			"path" : "ECS/ECS.h",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Components.h",
+			"path" : "ECS/Components.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ECS/SpriteComponent.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ECS/PositionComponent.h",
 			"sourceGroupIndex" : 2
 		}
 	],

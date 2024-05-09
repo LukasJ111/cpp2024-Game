@@ -160,5 +160,7 @@ add_executable(cpp2024_Game_ponulio
         zlib1.dll
         Map.h
         Map.cpp
-        ECS.h
-        Components.h)
+        ECS/ECS.h
+        ECS/Components.h
+        ECS/SpriteComponent.h
+        ECS/PositionComponent.h)
