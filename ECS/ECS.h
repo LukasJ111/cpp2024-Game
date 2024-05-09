@@ -2,7 +2,7 @@
 #define ECS_H
 
 //Sistema manage'int entities ir komponents ((E)ntity (C)omponent (S)ystem)
-//Kaip dabar suprantu: entities - objektai zaidimo pasaulyje, components "laukai" kuriuos entities turi (gali buti position, speed, etc.).
+//Kaip dabar suprantu: entities - objektai zaidimo pasaulyje, components "laukai" kuriuos entities turi (gali buti Ftion, speed, etc.).
 
 #include <iostream>
 #include <vector>
