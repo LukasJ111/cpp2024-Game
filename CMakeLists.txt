@@ -157,4 +157,6 @@ add_executable(cpp2024_Game_ponulio
         SDL2_image.dll
         texture_manager.cpp
         texture_manager.h
-        zlib1.dll)
+        zlib1.dll
+        Map.h
+        Map.cpp)

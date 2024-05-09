@@ -2,9 +2,12 @@
 #include "texture_manager.h"
 #include "game_object.h"
 #include "player.h"
+#include "Map.h"
 
 
 Player* player;
+
+Map* map;
 
 SDL_Renderer* game_loop::renderer=nullptr;
 
@@ -34,7 +37,7 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
     } 
 
     player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
-
+    map=new Map();
 }
 
 void game_loop::handle_events(){
@@ -56,11 +59,11 @@ void game_loop::handle_events(){
 void game_loop::update() {
 
     player->Update();
-
 }
 
 void game_loop::render() {
     SDL_RenderClear(renderer);
+    map->DrawMap(); // map draw'inam pirma, kad zaidejas/kiti objektai butu vaizduojamas ANT jo, o ne PO juo.
     player->Render();
     SDL_RenderPresent(renderer);
 }

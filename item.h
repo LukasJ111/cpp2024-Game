@@ -20,7 +20,7 @@
         item();
         ~item();
 
-        void set_item_texture(const char* file, SDL_Renderer* ren);
+        void set_item_texture(const char* file);
         void set_name(std::string name);
         void set_description(std::string description);
         void set_weapon_stats(int damage, int range);
