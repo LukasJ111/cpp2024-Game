@@ -9,7 +9,7 @@ class KeyboardController : public Component
 {
 public:
     TransformComponent *transform;
-    
+    const Uint8* keystates = SDL_GetKeyboardState(NULL);
 
     void init() override
     {
@@ -18,6 +18,24 @@ public:
 
     void update() override
     {
+        transform->velocity.x = 0;
+        transform->velocity.y = 0;
+
+        if (keystates[SDL_SCANCODE_W]) {
+            transform->velocity.y = -1;
+        }
+        if (keystates[SDL_SCANCODE_A]) {
+            transform->velocity.x = -1;
+        }
+        if (keystates[SDL_SCANCODE_S]) {
+            transform->velocity.y = 1;
+        }
+        if (keystates[SDL_SCANCODE_D]) {
+            transform->velocity.x = 1;
+        }
+        //SITAS BLOKAS IMPLEMENTUOJA TRUPUTI MAZIAU SMOOTH MOVEMENT, TODEL JIS UZKOMENTUOTAS.
+        //PRIDEJAU ALTERNATYVIA IR GERESNE MOVEMENT SISTEMA, BET JEI PASIMESIM SU TUTORIALU DEL SIU PAKEITIMU GALIMA ATKOMENTUOT
+        /*
         if(game_loop::event.type==SDL_KEYDOWN)
         {
             switch(game_loop::event.key.keysym.sym)
@@ -60,6 +78,9 @@ public:
                     break;
             }
         }
+         */
+
+
     }
 };
 
