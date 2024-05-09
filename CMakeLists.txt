@@ -165,4 +165,5 @@ add_executable(cpp2024_Game_ponulio
         ECS/SpriteComponent.h
         ECS/TransformComponent.h
         Vector2D.h
-        Vector2D.cpp)
+        Vector2D.cpp
+        ECS/KeyboardController.h)

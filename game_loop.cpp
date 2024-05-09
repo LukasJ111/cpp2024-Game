@@ -13,6 +13,8 @@ Map* map;
 Manager manager;
 
 SDL_Renderer* game_loop::renderer=nullptr;
+SDL_Event game_loop::event;
+
 auto& player(manager.addEntity());
 
 game_loop::game_loop(){}
@@ -45,11 +47,12 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     player.addComponent<TransformComponent>(300, 200);
     player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png");
+    player.addComponent<KeyboardController>();
 
 }
 
 void game_loop::handle_events(){
-    SDL_Event event;
+
     SDL_PollEvent(&event);
 
     switch (event.type)
@@ -65,8 +68,6 @@ void game_loop::handle_events(){
 }
 
 void game_loop::update() {
-
-    player.getComponent<TransformComponent>().position.Add(Vector2D(5,2));
 
     manager.refresh();
     manager.update();
