@@ -1,4 +1,4 @@
-#include "item.hpp"
+#include "item.h"
 
 item::item(){
     item_texture = NULL;

@@ -1,8 +1,10 @@
-#include "game_loop.hpp"
+#include "game_loop.h"
 #include "texture_manager.h"
+#include "game_object.h"
+#include "player.h"
 
-SDL_Texture* playerTex;
-SDL_Rect srcR, destR;
+
+Player* player;
 
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
@@ -29,7 +31,7 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     } 
 
-    playerTex = texture_manager::LoadTexture("assets/a.png", renderer); // simple loading
+    player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", renderer, 0 ,0); // simple loading
 
 }
 
@@ -50,15 +52,14 @@ void game_loop::handle_events(){
 }
 
 void game_loop::update() {
-    destR.h = 32;
-    destR.w = 184;
 
-    destR.x++; // Moving
+    player->Update();
+
 }
 
 void game_loop::render() {
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, playerTex, NULL, &destR);
+    player->Render();
     SDL_RenderPresent(renderer);
 }
 

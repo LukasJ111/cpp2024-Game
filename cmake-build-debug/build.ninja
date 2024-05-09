@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: cpp2024_Game
+# Project: cpp2024_Game_ponulio
 # Configurations: Debug
 # =============================================================================
 
@@ -41,77 +41,86 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target cpp2024_Game
+# Object build statements for EXECUTABLE target cpp2024_Game_ponulio
 
 
 #############################################
-# Order-only phony target for cpp2024_Game
+# Order-only phony target for cpp2024_Game_ponulio
 
-build cmake_object_order_depends_target_cpp2024_Game: phony || CMakeFiles/cpp2024_Game.dir
+build cmake_object_order_depends_target_cpp2024_Game_ponulio: phony || CMakeFiles/cpp2024_Game_ponulio.dir
 
-build CMakeFiles/cpp2024_Game.dir/game_loop.cpp.obj: CXX_COMPILER__cpp2024_Game_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/game_loop.cpp || cmake_object_order_depends_target_cpp2024_Game
-  DEP_FILE = CMakeFiles\cpp2024_Game.dir\game_loop.cpp.obj.d
+build CMakeFiles/cpp2024_Game_ponulio.dir/game_loop.cpp.obj: CXX_COMPILER__cpp2024_Game_ponulio_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/game_loop.cpp || cmake_object_order_depends_target_cpp2024_Game_ponulio
+  DEP_FILE = CMakeFiles\cpp2024_Game_ponulio.dir\game_loop.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
-  OBJECT_DIR = CMakeFiles\cpp2024_Game.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game.dir
-  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game.dir\
-  TARGET_PDB = cpp2024_Game.pdb
+  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game_ponulio.dir\
+  TARGET_PDB = cpp2024_Game_ponulio.pdb
 
-build CMakeFiles/cpp2024_Game.dir/item.cpp.obj: CXX_COMPILER__cpp2024_Game_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/item.cpp || cmake_object_order_depends_target_cpp2024_Game
-  DEP_FILE = CMakeFiles\cpp2024_Game.dir\item.cpp.obj.d
+build CMakeFiles/cpp2024_Game_ponulio.dir/game_object.cpp.obj: CXX_COMPILER__cpp2024_Game_ponulio_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/game_object.cpp || cmake_object_order_depends_target_cpp2024_Game_ponulio
+  DEP_FILE = CMakeFiles\cpp2024_Game_ponulio.dir\game_object.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
-  OBJECT_DIR = CMakeFiles\cpp2024_Game.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game.dir
-  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game.dir\
-  TARGET_PDB = cpp2024_Game.pdb
+  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game_ponulio.dir\
+  TARGET_PDB = cpp2024_Game_ponulio.pdb
 
-build CMakeFiles/cpp2024_Game.dir/main.cpp.obj: CXX_COMPILER__cpp2024_Game_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/main.cpp || cmake_object_order_depends_target_cpp2024_Game
-  DEP_FILE = CMakeFiles\cpp2024_Game.dir\main.cpp.obj.d
+build CMakeFiles/cpp2024_Game_ponulio.dir/item.cpp.obj: CXX_COMPILER__cpp2024_Game_ponulio_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/item.cpp || cmake_object_order_depends_target_cpp2024_Game_ponulio
+  DEP_FILE = CMakeFiles\cpp2024_Game_ponulio.dir\item.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
-  OBJECT_DIR = CMakeFiles\cpp2024_Game.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game.dir
-  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game.dir\
-  TARGET_PDB = cpp2024_Game.pdb
+  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game_ponulio.dir\
+  TARGET_PDB = cpp2024_Game_ponulio.pdb
 
-build CMakeFiles/cpp2024_Game.dir/player.cpp.obj: CXX_COMPILER__cpp2024_Game_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/player.cpp || cmake_object_order_depends_target_cpp2024_Game
-  DEP_FILE = CMakeFiles\cpp2024_Game.dir\player.cpp.obj.d
+build CMakeFiles/cpp2024_Game_ponulio.dir/main.cpp.obj: CXX_COMPILER__cpp2024_Game_ponulio_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/main.cpp || cmake_object_order_depends_target_cpp2024_Game_ponulio
+  DEP_FILE = CMakeFiles\cpp2024_Game_ponulio.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
-  OBJECT_DIR = CMakeFiles\cpp2024_Game.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game.dir
-  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game.dir\
-  TARGET_PDB = cpp2024_Game.pdb
+  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game_ponulio.dir\
+  TARGET_PDB = cpp2024_Game_ponulio.pdb
 
-build CMakeFiles/cpp2024_Game.dir/texture_manager.cpp.obj: CXX_COMPILER__cpp2024_Game_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/texture_manager.cpp || cmake_object_order_depends_target_cpp2024_Game
-  DEP_FILE = CMakeFiles\cpp2024_Game.dir\texture_manager.cpp.obj.d
+build CMakeFiles/cpp2024_Game_ponulio.dir/player.cpp.obj: CXX_COMPILER__cpp2024_Game_ponulio_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/player.cpp || cmake_object_order_depends_target_cpp2024_Game_ponulio
+  DEP_FILE = CMakeFiles\cpp2024_Game_ponulio.dir\player.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
-  OBJECT_DIR = CMakeFiles\cpp2024_Game.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game.dir
-  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game.dir\
-  TARGET_PDB = cpp2024_Game.pdb
+  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game_ponulio.dir\
+  TARGET_PDB = cpp2024_Game_ponulio.pdb
+
+build CMakeFiles/cpp2024_Game_ponulio.dir/texture_manager.cpp.obj: CXX_COMPILER__cpp2024_Game_ponulio_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/texture_manager.cpp || cmake_object_order_depends_target_cpp2024_Game_ponulio
+  DEP_FILE = CMakeFiles\cpp2024_Game_ponulio.dir\texture_manager.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game_ponulio.dir\
+  TARGET_PDB = cpp2024_Game_ponulio.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target cpp2024_Game
+# Link build statements for EXECUTABLE target cpp2024_Game_ponulio
 
 
 #############################################
-# Link the executable cpp2024_Game.exe
+# Link the executable cpp2024_Game_ponulio.exe
 
-build cpp2024_Game.exe: CXX_EXECUTABLE_LINKER__cpp2024_Game_Debug CMakeFiles/cpp2024_Game.dir/game_loop.cpp.obj CMakeFiles/cpp2024_Game.dir/item.cpp.obj CMakeFiles/cpp2024_Game.dir/main.cpp.obj CMakeFiles/cpp2024_Game.dir/player.cpp.obj CMakeFiles/cpp2024_Game.dir/texture_manager.cpp.obj
+build cpp2024_Game_ponulio.exe: CXX_EXECUTABLE_LINKER__cpp2024_Game_ponulio_Debug CMakeFiles/cpp2024_Game_ponulio.dir/game_loop.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/game_object.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/item.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/main.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/player.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/texture_manager.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\cpp2024_Game.dir
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game.dir\
-  TARGET_FILE = cpp2024_Game.exe
-  TARGET_IMPLIB = libcpp2024_Game.dll.a
-  TARGET_PDB = cpp2024_Game.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\cpp2024_Game_ponulio.dir\
+  TARGET_FILE = cpp2024_Game_ponulio.exe
+  TARGET_IMPLIB = libcpp2024_Game_ponulio.dll.a
+  TARGET_PDB = cpp2024_Game_ponulio.pdb
 
 
 #############################################
@@ -139,7 +148,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build cpp2024_Game: phony cpp2024_Game.exe
+build cpp2024_Game_ponulio: phony cpp2024_Game_ponulio.exe
 
 # =============================================================================
 # Folder targets.
@@ -149,7 +158,7 @@ build cpp2024_Game: phony cpp2024_Game.exe
 #############################################
 # Folder: C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/cmake-build-debug
 
-build all: phony cpp2024_Game.exe
+build all: phony cpp2024_Game_ponulio.exe
 
 # =============================================================================
 # Built-in targets
