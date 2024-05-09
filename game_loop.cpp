@@ -4,10 +4,15 @@
 #include "player.h"
 #include "Map.h"
 
+#include "ECS.h"
+#include "Components.h"
 
 Player* player;
 
 Map* map;
+
+Manager manager;
+auto& newPlayer(manager.addEntity());
 
 SDL_Renderer* game_loop::renderer=nullptr;
 
@@ -38,6 +43,9 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
     map=new Map();
+
+    newPlayer.addComponent<PositionComponent>();
+
 }
 
 void game_loop::handle_events(){
@@ -59,6 +67,9 @@ void game_loop::handle_events(){
 void game_loop::update() {
 
     player->Update();
+
+    manager.update();
+    std::cout<<newPlayer.getComponent<PositionComponent>().x()<<","<<newPlayer.getComponent<PositionComponent>().y()<<std::endl;
 }
 
 void game_loop::render() {

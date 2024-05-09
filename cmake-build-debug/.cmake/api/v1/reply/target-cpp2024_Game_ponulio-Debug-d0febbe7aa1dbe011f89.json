@@ -303,7 +303,9 @@
 				136,
 				141,
 				146,
-				148
+				148,
+				150,
+				151
 			]
 		},
 		{
@@ -1078,6 +1080,16 @@
 			"compileGroupIndex" : 0,
 			"path" : "Map.cpp",
 			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ECS.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Components.h",
+			"sourceGroupIndex" : 2
 		}
 	],
 	"type" : "EXECUTABLE"
