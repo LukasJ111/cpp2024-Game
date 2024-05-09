@@ -163,4 +163,6 @@ add_executable(cpp2024_Game_ponulio
         ECS/ECS.h
         ECS/Components.h
         ECS/SpriteComponent.h
-        ECS/PositionComponent.h)
+        ECS/TransformComponent.h
+        Vector2D.h
+        Vector2D.cpp)

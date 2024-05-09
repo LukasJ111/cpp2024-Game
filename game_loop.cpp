@@ -6,6 +6,8 @@
 #include "ECS/Components.h"
 #include "ECS/ECS.h"
 
+#include "Vector2D.h"
+
 Map* map;
 
 Manager manager;
@@ -41,7 +43,7 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
     //player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
     map=new Map();
 
-    player.addComponent<PositionComponent>(300, 200);
+    player.addComponent<TransformComponent>(300, 200);
     player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png");
 
 }
@@ -63,6 +65,8 @@ void game_loop::handle_events(){
 }
 
 void game_loop::update() {
+
+    player.getComponent<TransformComponent>().position.Add(Vector2D(5,2));
 
     manager.refresh();
     manager.update();

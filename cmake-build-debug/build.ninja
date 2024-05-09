@@ -98,6 +98,13 @@ build CMakeFiles/cpp2024_Game_ponulio.dir/Map.cpp.obj: CXX_COMPILER__cpp2024_Gam
   OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
 
+build CMakeFiles/cpp2024_Game_ponulio.dir/Vector2D.cpp.obj: CXX_COMPILER__cpp2024_Game_ponulio_unscanned_Debug C$:/Users/kipra/Desktop/game$ shit/New$ folder/cpp2024-Game/Vector2D.cpp || cmake_object_order_depends_target_cpp2024_Game_ponulio
+  DEP_FILE = CMakeFiles\cpp2024_Game_ponulio.dir\Vector2D.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/." -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/assets" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include" -I"C:/Users/kipra/Desktop/game shit/New folder/cpp2024-Game/src/include/SDL2"
+  OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp2024_Game_ponulio.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cpp2024_Game_ponulio
@@ -106,7 +113,7 @@ build CMakeFiles/cpp2024_Game_ponulio.dir/Map.cpp.obj: CXX_COMPILER__cpp2024_Gam
 #############################################
 # Link the executable cpp2024_Game_ponulio.exe
 
-build cpp2024_Game_ponulio.exe: CXX_EXECUTABLE_LINKER__cpp2024_Game_ponulio_Debug CMakeFiles/cpp2024_Game_ponulio.dir/game_loop.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/game_object.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/item.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/main.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/player.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/texture_manager.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/Map.cpp.obj
+build cpp2024_Game_ponulio.exe: CXX_EXECUTABLE_LINKER__cpp2024_Game_ponulio_Debug CMakeFiles/cpp2024_Game_ponulio.dir/game_loop.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/game_object.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/item.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/main.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/player.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/texture_manager.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/Map.cpp.obj CMakeFiles/cpp2024_Game_ponulio.dir/Vector2D.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cpp2024_Game_ponulio.dir

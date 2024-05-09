@@ -4,7 +4,7 @@
 #define Components_H
 
 #include "ECS.h"
-#include "PositionComponent.h"
+#include "TransformComponent.h"
 #include "SpriteComponent.h"
 
 
