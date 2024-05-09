@@ -11,14 +11,16 @@ class Player : public game_object {
 
 public:
 
-    // Player look
-    SDL_Texture* player_texture;
     int health;
     item inventory[2]; // Max 2 weapons (hard-coded) 
     int speed;
 
 public:
+<<<<<<< HEAD
     Player(const char* texturesheet, SDL_Renderer* ren);
+=======
+    Player(const char* texturesheet, int x, int y);
+>>>>>>> origin/KiprasK
     ~Player();
 
 
@@ -34,9 +36,12 @@ public:
     void player_heal(int heal);             // Regeneration effect later in game loop logic (once every N seconds n stuff)
     void player_add_item(item weapon);
 
+<<<<<<< HEAD
     SDL_Texture* objTexture;
     SDL_Rect srcRect, destRect;
     SDL_Renderer* renderer;
+=======
+>>>>>>> origin/KiprasK
 
 };
 

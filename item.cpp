@@ -12,8 +12,8 @@ item::~item(){
     SDL_DestroyTexture(item_texture);
 }
 
-void item::set_item_texture(const char* file, SDL_Renderer* ren){
-    item_texture = texture_manager::LoadTexture(file, ren);
+void item::set_item_texture(const char* file){
+    item_texture = texture_manager::LoadTexture(file);
 }
 
 void item::set_name(std::string name){
@@ -34,7 +34,7 @@ void item::show_item(SDL_Renderer* ren, int x, int y){
     dest_rect.x = x;
     dest_rect.y = y;
     SDL_QueryTexture(item_texture, NULL, NULL, &dest_rect.w, &dest_rect.h);
-    SDL_RenderCopy(ren, item_texture, NULL, &dest_rect);
+    SDL_RenderCopy(game_loop::renderer,item_texture, NULL, &dest_rect);
 }
 
 int item::deal_damage(){

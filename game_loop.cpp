@@ -1,10 +1,21 @@
 #include "game_loop.h"
 #include "texture_manager.h"
-#include "game_object.h"
 #include "player.h"
+#include "Map.h"
 
+#include "ECS/Components.h"
+#include "ECS/ECS.h"
 
-Player* player;
+#include "Vector2D.h"
+
+Map* map;
+
+Manager manager;
+
+SDL_Renderer* game_loop::renderer=nullptr;
+SDL_Event game_loop::event;
+
+auto& player(manager.addEntity());
 
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
@@ -31,12 +42,17 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
 
     } 
 
-    player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", renderer); // simple loading
+    //player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
+    map=new Map();
+
+    player.addComponent<TransformComponent>(300, 200);
+    player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png");
+    player.addComponent<KeyboardController>();
 
 }
 
 void game_loop::handle_events(){
-    SDL_Event event;
+
     SDL_PollEvent(&event);
 
     switch (event.type)
@@ -53,13 +69,15 @@ void game_loop::handle_events(){
 
 void game_loop::update() {
 
-    player->Update();
+    manager.refresh();
+    manager.update();
 
 }
 
 void game_loop::render() {
     SDL_RenderClear(renderer);
-    player->Render();
+    map->DrawMap(); // map draw'inam pirma, kad zaidejas/kiti objektai butu vaizduojamas ANT jo, o ne PO juo.
+    manager.draw();
     SDL_RenderPresent(renderer);
 }
 

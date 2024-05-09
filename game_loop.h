@@ -20,10 +20,11 @@ public:
         return is_running;
     };
 
+    static SDL_Renderer *renderer;
+    static SDL_Event event;
 private:
     bool is_running;
     SDL_Window *window;
-    SDL_Renderer *renderer;
 };
 
 #endif
