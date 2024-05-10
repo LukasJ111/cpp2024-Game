@@ -47,7 +47,7 @@ public:
         default:
             break;
         }
-        sprite->spriteFlip = SDL_FLIP_NONE;
+        //sprite->spriteFlip = SDL_FLIP_NONE;
 
         if (keystates[SDL_SCANCODE_W]) {
             transform->velocity.y = -1;
