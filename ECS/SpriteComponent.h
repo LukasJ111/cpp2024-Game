@@ -19,6 +19,8 @@ private:
     int frames = 0;
     int speed = 100;
 
+    char direction = ' ';
+
 public:
 
     int animIndex = 0;
@@ -38,13 +40,19 @@ public:
         animated = isAnimated;
 
         // Reiks pakeisti pagal savo animacijas
-        Animation idle = Animation(0, 1, 100);
-        Animation walk = Animation(1, 4, 100);
+        Animation idleUp = Animation(0, 1, 100);
+        Animation idle = Animation(1, 1, 100);
         Animation walkUp = Animation(2, 4, 100);
+        Animation walk = Animation(3, 4, 100);
+        Animation hitUpBH = Animation(4, 2, 100);
+        Animation hitBH = Animation(5, 2, 100);
 
         animations.emplace("Idle", idle);
-        animations.emplace("Walk", walk);
+        animations.emplace("IdleUp", idleUp);
         animations.emplace("WalkUp", walkUp);
+        animations.emplace("Walk", walk);
+        animations.emplace("HitUpBH", hitUpBH);
+        animations.emplace("HitBH", hitBH);
 
         Play("Idle");
 
@@ -98,5 +106,24 @@ public:
         animIndex = animations[animName].index;
         speed = animations[animName].speed;
     }
+
+    char getDirection() {
+
+        return this->direction;
+
+    }
+
+    void setDirection(char dir) {
+
+        dir = toupper(dir);
+
+        if (dir == 'W' || dir == 'A' || dir == 'S' || dir == 'D') 
+        {
+            this->direction = dir;
+        }
+
+    }
+
+
 };
 #endif
