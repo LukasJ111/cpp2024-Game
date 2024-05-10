@@ -18,10 +18,12 @@ SDL_Event game_loop::event;
 
 std::vector<ColliderComponent*> game_loop::colliders;
 
+bool game_loop::is_running=false;
+
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
 
-const char* mapfile="assets/Map/TEMPp16x16.map";
+const char* mapfile="assets/Map/grass.png"; //PAKEISTI SU PILNO MAPO PNG
 
 enum groupLabels : std::size_t
 {
@@ -30,6 +32,10 @@ enum groupLabels : std::size_t
     groupEnemies,
     groupColliders
 };
+
+auto& tiles(manager.getGroup(groupMap));
+auto& players(manager.getGroup(groupPlayers));
+auto& enemies(manager.getGroup(groupEnemies));
 
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
@@ -93,15 +99,18 @@ void game_loop::update() {
     manager.refresh();
     manager.update();
 
-    for (auto cc : colliders)
+    Vector2D pVel=player.getComponent<TransformComponent>().velocity;
+    int pSpeed=player.getComponent<TransformComponent>().speed;
+
+
+    for(auto t: tiles)
     {
-        Collision::AABB(player.getComponent<ColliderComponent>(), *cc);
+        t->getComponent<TileComponent>().destRect.x+=-(pVel.x*pSpeed);
+        t->getComponent<TileComponent>().destRect.y+=-(pVel.y*pSpeed);
     }
 }
 
-auto& tiles(manager.getGroup(groupMap));
-auto& players(manager.getGroup(groupPlayers));
-auto& enemies(manager.getGroup(groupEnemies));
+
 
 
 void game_loop::render() 

@@ -49,6 +49,9 @@ public:
             sprite->Play("Walk");
             sprite->spriteFlip = SDL_FLIP_NONE;
         }
+        if (keystates[SDL_SCANCODE_ESCAPE]) {
+            game_loop::is_running=false;
+        }
         //SITAS BLOKAS IMPLEMENTUOJA TRUPUTI MAZIAU SMOOTH MOVEMENT, TODEL JIS UZKOMENTUOTAS.
         //PRIDEJAU ALTERNATYVIA IR GERESNE MOVEMENT SISTEMA, BET JEI PASIMESIM SU TUTORIALU DEL SIU PAKEITIMU GALIMA ATKOMENTUOT
         /*
