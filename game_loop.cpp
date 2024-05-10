@@ -16,6 +16,8 @@ Manager manager;
 SDL_Renderer* game_loop::renderer=nullptr;
 SDL_Event game_loop::event;
 
+SDL_Rect game_loop::camera={0,0,800,640};
+
 std::vector<ColliderComponent*> game_loop::colliders;
 
 bool game_loop::is_running=false;
@@ -99,6 +101,15 @@ void game_loop::update() {
     manager.refresh();
     manager.update();
 
+    camera.x=player.getComponent<TransformComponent>().position.x-400;
+    camera.y=player.getComponent<TransformComponent>().position.y-320;
+
+    if(camera.x<0) camera.x=0;
+    if(camera.y<0) camera.y=0;
+    if(camera.x>camera.w) camera.x=camera.w;
+    if(camera.y>camera.h) camera.y=camera.h;
+
+    /*
     Vector2D pVel=player.getComponent<TransformComponent>().velocity;
     int pSpeed=player.getComponent<TransformComponent>().speed;
 
@@ -108,6 +119,7 @@ void game_loop::update() {
         t->getComponent<TileComponent>().destRect.x+=-(pVel.x*pSpeed);
         t->getComponent<TileComponent>().destRect.y+=-(pVel.y*pSpeed);
     }
+     */
 }
 
 

@@ -81,8 +81,8 @@ public:
 
         srcRect.y = animIndex * transform->height;
 
-        destRect.x = static_cast<int>(transform->position.x);
-        destRect.y = static_cast<int>(transform->position.y);
+        destRect.x = static_cast<int>(transform->position.x)-game_loop::camera.x;
+        destRect.y = static_cast<int>(transform->position.y)-game_loop::camera.y;
         destRect.w = transform->width * transform->scale;
         destRect.h = transform->height * transform->scale;
     }
