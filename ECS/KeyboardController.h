@@ -47,11 +47,13 @@ public:
         default:
             break;
         }
+        sprite->spriteFlip = SDL_FLIP_NONE;
 
         if (keystates[SDL_SCANCODE_W]) {
             transform->velocity.y = -1;
             sprite->Play("WalkUp");
             sprite->setDirection('W');
+            sprite->spriteFlip = SDL_FLIP_NONE;
         }
         if (keystates[SDL_SCANCODE_A]) {
             transform->velocity.x = -1;
@@ -80,6 +82,9 @@ public:
             sprite->Play("HitUpBH");
         }
 
+        if (keystates[SDL_SCANCODE_ESCAPE]) {
+            game_loop::is_running=false;
+        }
         //SITAS BLOKAS IMPLEMENTUOJA TRUPUTI MAZIAU SMOOTH MOVEMENT, TODEL JIS UZKOMENTUOTAS.
         //PRIDEJAU ALTERNATYVIA IR GERESNE MOVEMENT SISTEMA, BET JEI PASIMESIM SU TUTORIALU DEL SIU PAKEITIMU GALIMA ATKOMENTUOT
         /*

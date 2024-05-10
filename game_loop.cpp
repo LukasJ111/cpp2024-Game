@@ -16,10 +16,16 @@ Manager manager;
 SDL_Renderer* game_loop::renderer=nullptr;
 SDL_Event game_loop::event;
 
+SDL_Rect game_loop::camera={0,0,800,640};
+
 std::vector<ColliderComponent*> game_loop::colliders;
+
+bool game_loop::is_running=false;
 
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
+
+const char* mapfile="assets/Map/grass.png"; //PAKEISTI SU PILNO MAPO PNG
 
 enum groupLabels : std::size_t
 {
@@ -28,6 +34,10 @@ enum groupLabels : std::size_t
     groupEnemies,
     groupColliders
 };
+
+auto& tiles(manager.getGroup(groupMap));
+auto& players(manager.getGroup(groupPlayers));
+auto& enemies(manager.getGroup(groupEnemies));
 
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
@@ -60,16 +70,12 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
     // LAIKINAI PAKEICIAU I 32 X 32 (is 16 x 16) ir pridejau kita laikina faila (prirasiau TEMP) KAD GERIAU MINIMALIAI ATRODYTU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     Map::LoadMap("assets/Map/TEMPp16x16.map", 32, 32);
 
-    player.addComponent<TransformComponent>(2);
+    player.addComponent<TransformComponent>(4);
     player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerAnims.png", true);
     player.addComponent<KeyboardController>();
     player.addComponent<ColliderComponent>("player");
     player.addGroup(groupPlayers);
 
-    wall.addComponent<TransformComponent>(300.0f, 300.0f, 300, 20, 1);
-    wall.addComponent<SpriteComponent>("assets/Map/dirt.png");
-    wall.addComponent<ColliderComponent>("wall");
-    wall.addGroup(groupMap);
 
 }
 
@@ -95,15 +101,28 @@ void game_loop::update() {
     manager.refresh();
     manager.update();
 
-    for (auto cc : colliders)
+    camera.x=player.getComponent<TransformComponent>().position.x-400;
+    camera.y=player.getComponent<TransformComponent>().position.y-320;
+
+    if(camera.x<0) camera.x=0;
+    if(camera.y<0) camera.y=0;
+    if(camera.x>camera.w) camera.x=camera.w;
+    if(camera.y>camera.h) camera.y=camera.h;
+
+    /*
+    Vector2D pVel=player.getComponent<TransformComponent>().velocity;
+    int pSpeed=player.getComponent<TransformComponent>().speed;
+
+
+    for(auto t: tiles)
     {
-        Collision::AABB(player.getComponent<ColliderComponent>(), *cc);
+        t->getComponent<TileComponent>().destRect.x+=-(pVel.x*pSpeed);
+        t->getComponent<TileComponent>().destRect.y+=-(pVel.y*pSpeed);
     }
+     */
 }
 
-auto& tiles(manager.getGroup(groupMap));
-auto& players(manager.getGroup(groupPlayers));
-auto& enemies(manager.getGroup(groupEnemies));
+
 
 
 void game_loop::render() 
@@ -135,9 +154,9 @@ void game_loop::clean(){
     std::cout << "Exiting game.\n";
 }
 
-void game_loop::AddTile(int id, int x, int y)
+void game_loop::AddTile(int srcX, int srcY, int xpos, int ypos)
 {
     auto& tile(manager.addEntity());
-    tile.addComponent<TileComponent>(x, y, 32, 32, id);
+    tile.addComponent<TileComponent>(srcX, srcY, xpos, ypos, mapfile);
     tile.addGroup(groupMap);
 }

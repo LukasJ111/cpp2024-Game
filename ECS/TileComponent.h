@@ -1,53 +1,51 @@
 #pragma once
 
 #include "ECS.h"
-#include "TransformComponent.h"
-#include "SpriteComponent.h"
 #include "SDL.h"
 
 class TileComponent : public Component
 {
 public:
-    TransformComponent *transform;
-    SpriteComponent *sprite;
 
-    SDL_Rect tileRect;
-    int tileID;
-    // const pridejau nuo saves, nes kitaip nesutvarkiau problemos
-    const char* path;
+    SDL_Texture* texture;
+    SDL_Rect srcRect, destRect;
+
+    Vector2D position;
 
     TileComponent() = default;
 
-    TileComponent(int x, int y, int w, int h, int id)
+    ~TileComponent()
     {
-        tileRect.x = x;
-        tileRect.y = y;
-        tileRect.w = w;
-        tileRect.h = h;
-        tileID = id;
-
-        switch (tileID)
-        {
-        case 0:
-            path = "assets/Map/dirt.png";
-            break;
-        case 1:
-            path = "assets/Map/water.png";
-            break;
-        case 2:
-            path = "assets/Map/grass.png";
-            break;
-        default:
-            break;
-        }
+        SDL_DestroyTexture(texture);
     }
 
-    void init() override
-    {
-        entity->addComponent<TransformComponent>((float)tileRect.x, (float)tileRect.y, (float)tileRect.w, (float)tileRect.h, 1);
-        transform = &entity->getComponent<TransformComponent>();
 
-        entity->addComponent<SpriteComponent>(path);
-        sprite = &entity->getComponent<SpriteComponent>();
+    TileComponent(int srcX, int srcY, int xpos, int ypos, const char* path)
+    {
+        texture=texture_manager::LoadTexture(path);
+
+        position.x=xpos;
+        position.y=ypos;
+
+        srcRect.x=srcX;
+        srcRect.y=srcY;
+        srcRect.w=srcRect.h=32;
+
+        destRect.x=xpos;
+        destRect.y=ypos;
+        destRect.w=destRect.h=64;
+
     }
+
+    void update() override
+    {
+        destRect.x=position.x-game_loop::camera.x;
+        destRect.y=position.y-game_loop::camera.y;
+    }
+
+    void draw() override
+    {
+        texture_manager::Draw(texture, srcRect, destRect, SDL_FLIP_NONE);
+    }
+
 };
