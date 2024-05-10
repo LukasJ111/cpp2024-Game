@@ -166,4 +166,5 @@ add_executable(cpp2024_Game_ponulio
         ECS/TransformComponent.h
         Vector2D.h
         Vector2D.cpp
-        ECS/KeyboardController.h)
+        ECS/KeyboardController.h
+        Collision.cpp)

@@ -1,7 +1,5 @@
-#ifndef Map_H
-#define Map_H
-
-#include "game_loop.h"
+#pragma once
+#include <string>
 
 class Map{
 
@@ -9,20 +7,8 @@ public:
     Map();
     ~Map();
 
-    void LoadMap(int arr[20][25]);
-
-    void DrawMap();
+    static void LoadMap(std::string path, int sizeX, int sizeY);
 
 private:
-    SDL_Rect src, dest;
-
-    //Keisti pavadinimus as needed
-    SDL_Texture* dirt;
-    SDL_Texture* grass;
-    SDL_Texture* water;
-
-    //Keisti dydzius as needed
-    int map[20][25];
 };
 
-#endif

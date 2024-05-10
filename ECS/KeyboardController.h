@@ -11,27 +11,43 @@ public:
     TransformComponent *transform;
     const Uint8* keystates = SDL_GetKeyboardState(NULL);
 
+    SpriteComponent *sprite;
+
     void init() override
     {
         transform=&entity->getComponent<TransformComponent>();
+        sprite = &entity->getComponent<SpriteComponent>();
     }
 
+
+    // Animacijos ne tobulai sudeliotos - pataisyti
     void update() override
     {
         transform->velocity.x = 0;
         transform->velocity.y = 0;
 
+        sprite->spriteFlip = SDL_FLIP_NONE;
+        sprite->Play("Idle");
+
         if (keystates[SDL_SCANCODE_W]) {
             transform->velocity.y = -1;
+            sprite->Play("WalkUp");
+            sprite->spriteFlip = SDL_FLIP_NONE;
         }
         if (keystates[SDL_SCANCODE_A]) {
             transform->velocity.x = -1;
+            sprite->Play("Walk");
+            sprite->spriteFlip = SDL_FLIP_HORIZONTAL;
         }
         if (keystates[SDL_SCANCODE_S]) {
             transform->velocity.y = 1;
+            sprite->Play("WalkUp");
+            sprite->spriteFlip = SDL_FLIP_VERTICAL;
         }
         if (keystates[SDL_SCANCODE_D]) {
             transform->velocity.x = 1;
+            sprite->Play("Walk");
+            sprite->spriteFlip = SDL_FLIP_NONE;
         }
         //SITAS BLOKAS IMPLEMENTUOJA TRUPUTI MAZIAU SMOOTH MOVEMENT, TODEL JIS UZKOMENTUOTAS.
         //PRIDEJAU ALTERNATYVIA IR GERESNE MOVEMENT SISTEMA, BET JEI PASIMESIM SU TUTORIALU DEL SIU PAKEITIMU GALIMA ATKOMENTUOT
