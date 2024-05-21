@@ -49,9 +49,9 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
     } 
 
     //player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
-    map=new Map("assets/Map/terrain_ss.png", 3, 16);
+    map=new Map("assets/Map/map2.png", 4, 16);
     
-    map->LoadMap("assets/Map/map.map", 32, 32);
+    map->LoadMap("assets/Map/map2.map", 32, 32);
 
     player.addComponent<TransformComponent>(4);
     player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerAnims.png", true);
@@ -106,8 +106,10 @@ void game_loop::update()
 
     if(camera.x<0) camera.x=0;
     if(camera.y<0) camera.y=0;
-    if(camera.x>camera.w) camera.x=camera.w;
-    if(camera.y>camera.h) camera.y=camera.h;
+
+    // 32 ihardcodeinom
+    if(camera.x>(32*map->getScaledSize())-camera.w) camera.x=(32*map->getScaledSize())-camera.w;
+    if(camera.y>(32*map->getScaledSize())-camera.h) camera.y=(32*map->getScaledSize())-camera.h;
 
     /*
     Vector2D pVel=player.getComponent<TransformComponent>().velocity;

@@ -9,6 +9,7 @@ public:
 
     void LoadMap(std::string path, int sizeX, int sizeY);
     void AddTile(int srcX, int srcY, int xpos, int ypos);
+    int getScaledSize();
 
 private:
     const char* mapFilePath;

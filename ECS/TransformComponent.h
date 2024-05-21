@@ -28,8 +28,8 @@ public:
 
     TransformComponent(int sc)
     {
-        position.x=400;
-        position.y=320;
+        position.x=1047;
+        position.y=1731;
         scale = sc;
     }
 
