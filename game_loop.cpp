@@ -9,6 +9,8 @@
 
 #include "Vector2D.h"
 
+#include "SDL_image.h"
+
 Map* map;
 
 Manager manager;
@@ -22,6 +24,7 @@ bool game_loop::is_running=false;
 
 auto& player(manager.addEntity());
 
+static bool gameOver = false;
 
 game_loop::game_loop(){}
 game_loop::~game_loop(){}
@@ -49,9 +52,9 @@ void game_loop::init(const char* title, int x_pos, int y_pos, int width, int hei
     } 
 
     //player = new Player("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerRunRight (1).png", 0 ,0); // simple loading
-    map=new Map("assets/Map/map2.png", 4, 16);
+    map=new Map("assets/Map/map_ss.png", 4, 16);
     
-    map->LoadMap("assets/Map/map2.map", 32, 32);
+    map->LoadMap("assets/Map/map.map", 32, 32);
 
     player.addComponent<TransformComponent>(4);
     player.addComponent<SpriteComponent>("assets/Animacijos/PlayerPngs/PlayerRunRight/PlayerAnims.png", true);
@@ -88,16 +91,36 @@ void game_loop::update()
     SDL_Rect playerCol = player.getComponent<ColliderComponent>().collider;
     Vector2D playerPos = player.getComponent<TransformComponent>().position;
 
-
     manager.refresh();
     manager.update();
 
     for (auto& c : colliders)
     {
+        std::string tag=c->getComponent<ColliderComponent>().getTag();
         SDL_Rect  cCol = c->getComponent<ColliderComponent>().collider;
         if(Collision::AABB(cCol, playerCol))
         {
             player.getComponent<TransformComponent>().position = playerPos;
+            if(tag == "collectible") {
+
+                // IHARDCODEINOM
+                if(playerPos.x > 1400) {
+                    for (auto& d : colliders) {
+                        if(d->getComponent<ColliderComponent>().getTag() == "door") {
+
+                            d->destroy();
+                        }
+                    }
+                }
+
+                if(playerPos.y < 300 && playerPos.x > 850 && playerPos.x < 1050) {
+                    
+                    gameOver = true;
+                    //texture_manager::LoadTexture("assets/Map/map_ss.png");
+                }
+
+                c->destroy();
+            }
         }
     }
 
@@ -144,6 +167,33 @@ void game_loop::render()
     for (auto& p : players)
     {
         p->draw();
+    }
+
+    if(gameOver) {
+
+        auto texture = texture_manager::LoadTexture("assets/Map/pabaiga.png");
+
+        SDL_Rect dest = camera;
+
+        dest.x -= 560;
+
+        texture_manager::Draw(texture, dest, SDL_FLIP_NONE);
+
+        for (auto& t : tiles)
+        {
+            t->destroy();
+        }
+
+        for (auto& c : colliders)
+        {
+            c->destroy();
+        }
+
+        for (auto& p : players)
+        {
+            p->destroy();
+        }
+
     }
 
     SDL_RenderPresent(renderer);
