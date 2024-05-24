@@ -1,85 +1,117 @@
 #include "Map.h"
-#include "texture_manager.h"
+#include "game_loop.h"
+#include <fstream>
+#include "ECS\ECS.h"
+#include "ECS\Components.h"
 
-//Placeholder map
-int lvl1[20][25]={
-        {0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
-};
+extern Manager manager;
 
-Map::Map(){
-
-    //Siuo metu sudeti placeholder'iai, change as needed
-    dirt=texture_manager::LoadTexture("assets/Map/dirt.png");
-    grass=texture_manager::LoadTexture("assets/Map/grass.png");
-    water=texture_manager::LoadTexture("assets/Map/water.png");
-
-    LoadMap(lvl1); //Siuo metu mapas apibreztas paciame Map.cpp faile, tad LoadMap() kvieciame cia. Kai/jei map'a iskelsim i atskira faila, callinsim game_loop'e.
-
-    src.x=src.y=0;
-    src.w=dest.w=32;
-    src.h=dest.h=32;
-
-    dest.x=dest.y=0;
+Map::Map(const char* mfp, int ms, int ts) : mapFilePath(mfp), mapScale(ms), tileSize(ts)
+{
+    scaledSize = ms*ts;
 }
 
-void Map::LoadMap(int arr[20][25])
+Map::~Map()
 {
-    for(int row=0; row<20; row++)
+
+}
+
+void Map::LoadMap(std::string path, int sizeX, int sizeY)
+{
+    char c;
+    std::fstream mapFile;
+    mapFile.open(path);
+
+    int srcX, srcY;
+
+    for(int y = 0; y < sizeY; y++)
     {
-        for(int col=0; col<25; col++)
+        for(int x = 0; x < sizeX; x++)
         {
-            map[row][col]=arr[row][col];
+            mapFile.get(c);
+            srcY=atoi(&c)*tileSize;
+            mapFile.get(c);
+            srcX=atoi(&c)*tileSize;
+            AddTile(srcX, srcY, x * scaledSize, y * scaledSize);
+            mapFile.ignore();
+
         }
     }
-}
 
-void Map::DrawMap()
-{
-    int type=0;
-    for(int row=0; row<20; row++)
+
+    mapFile.ignore();
+
+    for (int y = 0; y < sizeY; y++)
     {
-        for(int col=0; col<25; col++)
+        for(int x = 0; x < sizeX; x++)
         {
-            type=map[row][col];
-
-            dest.x=col*32;
-            dest.y=row*32;
-
-            //Map'e 0 atspindi water.png, 1 - grass.png, 2 - dirt.png. Change as needed.
-            switch(type)
+            mapFile.get(c);
+            if (atoi(&c) != 0)
             {
-                case 0:
-                    texture_manager::Draw(water, src, dest);
-                    break;
-                case 1:
-                    texture_manager::Draw(grass, src, dest);
-                    break;
-                case 2:
-                    texture_manager::Draw(dirt, src, dest);
-                    break;
-
-                default:
-                    break;
+                auto& tcol(manager.addEntity());
+                int c1=atoi(&c);
+                srcY=atoi(&c)*tileSize;
+                mapFile.get(c);
+                srcX=atoi(&c)*tileSize;
+                
+                //tcol.addComponent<TileComponent>(srcX, srcY, x * scaledSize, y * scaledSize, tileSize, mapScale, mapFilePath);
+                
+                if((c1==3 &&  atoi(&c)==6) || (c1==3 &&  atoi(&c)==5) || (c1==3 &&  atoi(&c)==7))
+                {   
+                    tcol.addComponent<ColliderComponent>("door", srcX, srcY,  x * scaledSize, y * scaledSize, tileSize, mapScale, mapFilePath);
+                }
+                else{
+                    tcol.addComponent<ColliderComponent>("terrain", srcX, srcY,  x * scaledSize, y * scaledSize, tileSize, mapScale, mapFilePath);
+                }
+                tcol.addGroup(game_loop::groupColliders);
+            } else {
+                mapFile.ignore();
             }
+            mapFile.ignore();
         }
     }
+
+    mapFile.ignore();
+
+    for (int y = 0; y < sizeY; y++)
+    {
+        for(int x = 0; x < sizeX; x++)
+        {
+            mapFile.get(c);
+            if (atoi(&c) != 0)
+            {
+                auto& tcol(manager.addEntity());
+                
+                srcY=atoi(&c)*tileSize;
+                mapFile.get(c);
+                srcX=atoi(&c)*tileSize;
+                
+                //tcol.addComponent<TileComponent>(srcX, srcY, x * scaledSize, y * scaledSize, tileSize, mapScale, mapFilePath);
+                
+                tcol.addComponent<ColliderComponent>("collectible", srcX, srcY,  x * scaledSize, y * scaledSize, tileSize, mapScale, mapFilePath);
+                tcol.addGroup(game_loop::groupColliders);
+            } else {
+                mapFile.ignore();
+            }
+            mapFile.ignore();
+        }
+    }
+
+
+    mapFile.close();
+}
+
+void Map::AddTile(int srcX, int srcY, int xpos, int ypos)
+{
+    auto& tile(manager.addEntity());
+    tile.addComponent<TileComponent>(srcX, srcY, xpos, ypos, tileSize, mapScale, mapFilePath);
+    tile.addGroup(game_loop::groupMap);
+}
+
+int Map::getScaledSize() {
+    return scaledSize;
+}
+
+const char* Map::getMapFilePath() {
+    return mapFilePath;
 }

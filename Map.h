@@ -1,28 +1,21 @@
-#ifndef Map_H
-#define Map_H
-
-#include "game_loop.h"
+#pragma once
+#include <string>
 
 class Map{
 
 public:
-    Map();
+    Map(const char* mfp, int ms, int ts);
     ~Map();
 
-    void LoadMap(int arr[20][25]);
-
-    void DrawMap();
+    void LoadMap(std::string path, int sizeX, int sizeY);
+    void AddTile(int srcX, int srcY, int xpos, int ypos);
+    int getScaledSize();
+    const char* getMapFilePath();
 
 private:
-    SDL_Rect src, dest;
-
-    //Keisti pavadinimus as needed
-    SDL_Texture* dirt;
-    SDL_Texture* grass;
-    SDL_Texture* water;
-
-    //Keisti dydzius as needed
-    int map[20][25];
+    const char* mapFilePath;
+    int mapScale;
+    int tileSize;
+    int scaledSize; 
 };
 
-#endif

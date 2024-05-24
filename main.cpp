@@ -1,4 +1,5 @@
 #include "game_loop.h"
+#include "Menu.h"
 
 game_loop *game = nullptr;
 
@@ -9,8 +10,8 @@ int main( int argc, char *argv[] )
     const int frameDelay = 1000 / FPS; // Max time between frames
     Uint32 frameStart;
     int frameTime;
-
     game = new game_loop();
+
 
     game->init("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
 

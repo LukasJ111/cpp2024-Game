@@ -1,7 +1,4 @@
-
-#ifndef TransformComponent_H
-#define TransformComponent_H
-
+#pragma once
 #include "Components.h"
 #include "../Vector2D.h"
 
@@ -12,18 +9,28 @@ public:
     Vector2D position;
     Vector2D velocity;
 
+    // Originaliai buvo 32 ir 32, bet modifikavau atsizvelgiant i musu pixel arto dydi
+    int height = 16;
+    int width = 16;
+    int scale = 1;
+
     int speed=3;
 
     void init() override
     {
-        velocity.x=0;
-        velocity.y=0;
+        velocity.Zero();
     }
 
     TransformComponent()
     {
-        position.x=0.0f;
-        position.y=0.0f;
+        position.Zero();
+    }
+
+    TransformComponent(int sc)
+    {
+        position.x=1047;
+        position.y=1731;
+        scale = sc;
     }
 
     TransformComponent(float x, float y)
@@ -32,13 +39,20 @@ public:
         position.y=y;
     }
 
+    TransformComponent(float x, float y, int h, int w, int sc)
+    {
+        position.x=x;
+        position.y=y;
+        height=h;
+        width=w;
+        scale=sc;
+    }
+
     void update() override
     {
-        position.x+=velocity.x*speed;
-        position.y+=velocity.y*speed;
+       // position.x+=velocity.x*speed;
+       // position.y+=velocity.y*speed;
     }
 
 };
 
-
-#endif
