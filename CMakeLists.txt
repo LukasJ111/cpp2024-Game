@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-project(cpp2024_Game_ponulio)
+project(cpp2024_Game)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -8,7 +8,8 @@ include_directories(assets)
 include_directories(src)
 include_directories(src/include)
 include_directories(src/include/SDL2)
-
+find_package(SDL2_image CONFIG REQUIRED)
+target_link_libraries(main PRIVATE $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>)
 add_executable(cpp2024_Game_ponulio
         "assets/Animacijos/EnemyPngs/Rat/RatAttack/RatAttack (1).png"
         "assets/Animacijos/EnemyPngs/Rat/RatAttack/RatAttack (2).png"
@@ -167,4 +168,6 @@ add_executable(cpp2024_Game_ponulio
         Vector2D.h
         Vector2D.cpp
         ECS/KeyboardController.h
-        Collision.cpp)
+        Collision.cpp
+        Menu.cpp
+        Menu.h)

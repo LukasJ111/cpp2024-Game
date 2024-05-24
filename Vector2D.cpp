@@ -83,7 +83,13 @@ Vector2D& Vector2D::operator*(const int& i)
 
     return *this;
 }
+Vector2D& Vector2D::operator*(const float& i)
+{
+    this->x *= i;
+    this->y *= i;
 
+    return *this;
+}
 Vector2D& Vector2D::Zero()
 {
     this->x = 0;

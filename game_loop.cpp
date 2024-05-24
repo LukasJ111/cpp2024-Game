@@ -8,6 +8,7 @@
 #include "ECS/ECS.h"
 
 #include "Vector2D.h"
+#include "Menu.h"
 
 #include "SDL_image.h"
 
@@ -21,6 +22,7 @@ SDL_Event game_loop::event;
 SDL_Rect game_loop::camera={0,0,800,640};
 
 bool game_loop::is_running=false;
+static bool is_Started = false;
 
 auto& player(manager.addEntity());
 
@@ -87,20 +89,25 @@ void game_loop::handle_events(){
 
 void game_loop::update() 
 {
-
-    SDL_Rect playerCol = player.getComponent<ColliderComponent>().collider;
-    Vector2D playerPos = player.getComponent<TransformComponent>().position;
+    TransformComponent &transform = player.getComponent<TransformComponent>();
+    ColliderComponent &collider = player.getComponent<ColliderComponent>();
+    Vector2D playerOldPos = transform.position;
+    transform.position += Vector2D(transform.velocity.x*transform.speed,0);
+    bool can_move_x = true;
 
     manager.refresh();
     manager.update();
-
+    Vector2D playerPos = transform.position;
+    SDL_Rect playerCol = collider.collider;
     for (auto& c : colliders)
     {
         std::string tag=c->getComponent<ColliderComponent>().getTag();
         SDL_Rect  cCol = c->getComponent<ColliderComponent>().collider;
+
         if(Collision::AABB(cCol, playerCol))
         {
-            player.getComponent<TransformComponent>().position = playerPos;
+            can_move_x = false;
+
             if(tag == "collectible") {
 
                 // IHARDCODEINOM
@@ -124,6 +131,54 @@ void game_loop::update()
         }
     }
 
+    if(!can_move_x){
+        transform.position = playerOldPos;
+    } else {
+        playerOldPos = transform.position;
+    }
+
+    transform.position += Vector2D(0, transform.velocity.y*transform.speed);
+    bool can_move_y = true;
+    collider.update();
+
+    playerPos = transform.position;
+    playerCol = collider.collider;
+    for (auto& c : colliders)
+    {
+        std::string tag=c->getComponent<ColliderComponent>().getTag();
+        SDL_Rect  cCol = c->getComponent<ColliderComponent>().collider;
+
+        if(Collision::AABB(cCol, playerCol))
+        {
+            can_move_y = false;
+
+            if(tag == "collectible") {
+
+                // IHARDCODEINOM
+                if(playerPos.x > 1400) {
+                    for (auto& d : colliders) {
+                        if(d->getComponent<ColliderComponent>().getTag() == "door") {
+
+                            d->destroy();
+                        }
+                    }
+                }
+
+                if(playerPos.y < 300 && playerPos.x > 850 && playerPos.x < 1050) {
+
+                    gameOver = true;
+                    //texture_manager::LoadTexture("assets/Map/map_ss.png");
+                }
+
+                c->destroy();
+            }
+        }
+    }
+
+    if(!can_move_y){
+        transform.position = playerOldPos;
+    }
+
     camera.x=player.getComponent<TransformComponent>().position.x-400;
     camera.y=player.getComponent<TransformComponent>().position.y-320;
 
@@ -145,8 +200,9 @@ void game_loop::update()
         t->getComponent<TileComponent>().destRect.y+=-(pVel.y*pSpeed);
     }
      */
-}
 
+
+}
 
 
 
@@ -194,6 +250,12 @@ void game_loop::render()
             p->destroy();
         }
 
+    }
+
+    if (!is_Started)
+    {
+        Menu menu;
+       // menu.show_menu(camera);
     }
 
     SDL_RenderPresent(renderer);
