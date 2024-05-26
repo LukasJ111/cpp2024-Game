@@ -1,0 +1,44 @@
+\doxysection{player.\+h}
+\hypertarget{player_8h_source}{}\label{player_8h_source}\mbox{\hyperlink{player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ player\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \ player\_h}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\#include\ "{}texture\_manager.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_events.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__object_8h}{game\_object.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classgame__object}{game\_object}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_aad33b52bfe73c4c978a3135172f286a0}{health}};}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classitem}{item}}\ \mbox{\hyperlink{class_player_a8d5cac4b6439fbe6e36f717b657e311e}{inventory}}[2];\ \textcolor{comment}{//\ Max\ 2\ weapons\ (hard-\/coded)\ }}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a0349855298626faed9f05f86965ff689}{speed}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_player_ae6f40605bbbe53789d8fe12bf01c2549}{Player}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ texturesheet,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{\string~Player}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Animations}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a414f809d992d15c94df623d8b6ecd290}{set\_player\_texture}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file,\ SDL\_Renderer*\ ren);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ad806406bc2a4bd04bce5582b8f20c04d}{animate\_player\_movement}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sheet,\ SDL\_Renderer*\ ren,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ab6b77b5d20a1d343f405fdb8b7e4c76b}{animate\_player\_attack}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sheet,\ SDL\_Renderer*\ ren,\ \mbox{\hyperlink{classitem}{item}}\ weapon,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);\ \textcolor{comment}{//\ Position\ need\ relevant\ to\ where\ it\ was\ swung}}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aa1e81c052e213ef3952d93fec43f53e3}{handle\_input}}(SDL\_Event\ key\_pressed);\ \textcolor{comment}{//\ unsure\ how\ to\ do\ this\ \ yet}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ void}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a37c06d14fc005ec5b223e139170e8104}{player\_take\_damage}}(\textcolor{keywordtype}{int}\ damage);\ \ \ \ \textcolor{comment}{//\ Slow\ player\ after\ taking\ damage\ :D}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ae329569a1783dc70371eb94506b1f09e}{player\_heal}}(\textcolor{keywordtype}{int}\ heal);\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Regeneration\ effect\ later\ in\ game\ loop\ logic\ (once\ every\ N\ seconds\ n\ stuff)}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a63c038ec099633e14138e1382a58716b}{player\_add\_item}}(\mbox{\hyperlink{classitem}{item}}\ weapon);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

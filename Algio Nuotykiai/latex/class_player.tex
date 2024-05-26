@@ -1,0 +1,162 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+
+
+Inheritance diagram for Player\+:
+% FIG 0
+
+
+Collaboration diagram for Player\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_ae6f40605bbbe53789d8fe12bf01c2549}{Player}} (const char \texorpdfstring{$\ast$}{*}texturesheet, int x, int y)
+\item 
+\mbox{\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{\texorpdfstring{$\sim$}{\string~}\+Player}} ()
+\item 
+void \mbox{\hyperlink{class_player_a414f809d992d15c94df623d8b6ecd290}{set\+\_\+player\+\_\+texture}} (const char \texorpdfstring{$\ast$}{*}file, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}ren)
+\item 
+void \mbox{\hyperlink{class_player_ad806406bc2a4bd04bce5582b8f20c04d}{animate\+\_\+player\+\_\+movement}} (const char \texorpdfstring{$\ast$}{*}sheet, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}ren, int x, int y)
+\item 
+void \mbox{\hyperlink{class_player_ab6b77b5d20a1d343f405fdb8b7e4c76b}{animate\+\_\+player\+\_\+attack}} (const char \texorpdfstring{$\ast$}{*}sheet, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}ren, \mbox{\hyperlink{classitem}{item}} weapon, int x, int y)
+\item 
+void \mbox{\hyperlink{class_player_aa1e81c052e213ef3952d93fec43f53e3}{handle\+\_\+input}} (SDL\+\_\+\+Event key\+\_\+pressed)
+\item 
+void \mbox{\hyperlink{class_player_a37c06d14fc005ec5b223e139170e8104}{player\+\_\+take\+\_\+damage}} (int damage)
+\item 
+void \mbox{\hyperlink{class_player_ae329569a1783dc70371eb94506b1f09e}{player\+\_\+heal}} (int heal)
+\item 
+void \mbox{\hyperlink{class_player_a63c038ec099633e14138e1382a58716b}{player\+\_\+add\+\_\+item}} (\mbox{\hyperlink{classitem}{item}} weapon)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classgame__object}{game\+\_\+object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame__object_a6716a11daa9e574713317cfdbe82dbe7}{game\+\_\+object}} ()
+\item 
+\mbox{\hyperlink{classgame__object_ac70a3699ff981a878a349b916ca65fa6}{game\+\_\+object}} (const char \texorpdfstring{$\ast$}{*}texturesheet, int x, int y)
+\item 
+\mbox{\hyperlink{classgame__object_a5843ca44bb24112be0d984011bbcde91}{\texorpdfstring{$\sim$}{\string~}game\+\_\+object}} ()
+\item 
+void \mbox{\hyperlink{classgame__object_aa1184d0c2ffe84727c5a2353eb944988}{Update}} ()
+\item 
+void \mbox{\hyperlink{classgame__object_a0cc3bc2682cb3a2b0ccad6110f885dba}{Render}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_player_aad33b52bfe73c4c978a3135172f286a0}{health}}
+\item 
+\mbox{\hyperlink{classitem}{item}} \mbox{\hyperlink{class_player_a8d5cac4b6439fbe6e36f717b657e311e}{inventory}} \mbox{[}2\mbox{]}
+\item 
+int \mbox{\hyperlink{class_player_a0349855298626faed9f05f86965ff689}{speed}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classgame__object}{game\+\_\+object}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classgame__object_a021803f6f4228ed0a298b7a2dbf9e492}{xpos}}
+\item 
+int \mbox{\hyperlink{classgame__object_a737d1c2a7806e4c8bde05f449dae9aa4}{ypos}}
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__object_a369ce25f52d0ba6b58f6e2fd65abb4d7}{obj\+Texture}}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classgame__object_afa2d1d61b22522fa6352a0f348b64c5f}{src\+Rect}}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classgame__object_a6ffbb598c7496e62b62772ac772e11bd}{dest\+Rect}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_ae6f40605bbbe53789d8fe12bf01c2549}\label{class_player_ae6f40605bbbe53789d8fe12bf01c2549} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{texturesheet,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_a749d2c00e1fe0f5c2746f7505a58c062}\label{class_player_a749d2c00e1fe0f5c2746f7505a58c062} 
+\index{Player@{Player}!````~Player@{\texorpdfstring{$\sim$}{\string~}Player}}
+\index{````~Player@{\texorpdfstring{$\sim$}{\string~}Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Player()}{\string~Player()}}
+{\footnotesize\ttfamily Player\+::\texorpdfstring{$\sim$}{\string~}\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_ab6b77b5d20a1d343f405fdb8b7e4c76b}\label{class_player_ab6b77b5d20a1d343f405fdb8b7e4c76b} 
+\index{Player@{Player}!animate\_player\_attack@{animate\_player\_attack}}
+\index{animate\_player\_attack@{animate\_player\_attack}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{animate\_player\_attack()}{animate\_player\_attack()}}
+{\footnotesize\ttfamily void Player\+::animate\+\_\+player\+\_\+attack (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{sheet,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{ren,  }\item[{\mbox{\hyperlink{classitem}{item}}}]{weapon,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+\Hypertarget{class_player_ad806406bc2a4bd04bce5582b8f20c04d}\label{class_player_ad806406bc2a4bd04bce5582b8f20c04d} 
+\index{Player@{Player}!animate\_player\_movement@{animate\_player\_movement}}
+\index{animate\_player\_movement@{animate\_player\_movement}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{animate\_player\_movement()}{animate\_player\_movement()}}
+{\footnotesize\ttfamily void Player\+::animate\+\_\+player\+\_\+movement (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{sheet,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{ren,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_aa1e81c052e213ef3952d93fec43f53e3}\label{class_player_aa1e81c052e213ef3952d93fec43f53e3} 
+\index{Player@{Player}!handle\_input@{handle\_input}}
+\index{handle\_input@{handle\_input}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{handle\_input()}{handle\_input()}}
+{\footnotesize\ttfamily void Player\+::handle\+\_\+input (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event}]{key\+\_\+pressed }\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_a63c038ec099633e14138e1382a58716b}\label{class_player_a63c038ec099633e14138e1382a58716b} 
+\index{Player@{Player}!player\_add\_item@{player\_add\_item}}
+\index{player\_add\_item@{player\_add\_item}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{player\_add\_item()}{player\_add\_item()}}
+{\footnotesize\ttfamily void Player\+::player\+\_\+add\+\_\+item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classitem}{item}}}]{weapon }\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_ae329569a1783dc70371eb94506b1f09e}\label{class_player_ae329569a1783dc70371eb94506b1f09e} 
+\index{Player@{Player}!player\_heal@{player\_heal}}
+\index{player\_heal@{player\_heal}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{player\_heal()}{player\_heal()}}
+{\footnotesize\ttfamily void Player\+::player\+\_\+heal (\begin{DoxyParamCaption}\item[{int}]{heal }\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_a37c06d14fc005ec5b223e139170e8104}\label{class_player_a37c06d14fc005ec5b223e139170e8104} 
+\index{Player@{Player}!player\_take\_damage@{player\_take\_damage}}
+\index{player\_take\_damage@{player\_take\_damage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{player\_take\_damage()}{player\_take\_damage()}}
+{\footnotesize\ttfamily void Player\+::player\+\_\+take\+\_\+damage (\begin{DoxyParamCaption}\item[{int}]{damage }\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_a414f809d992d15c94df623d8b6ecd290}\label{class_player_a414f809d992d15c94df623d8b6ecd290} 
+\index{Player@{Player}!set\_player\_texture@{set\_player\_texture}}
+\index{set\_player\_texture@{set\_player\_texture}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{set\_player\_texture()}{set\_player\_texture()}}
+{\footnotesize\ttfamily void Player\+::set\+\_\+player\+\_\+texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{ren }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_aad33b52bfe73c4c978a3135172f286a0}\label{class_player_aad33b52bfe73c4c978a3135172f286a0} 
+\index{Player@{Player}!health@{health}}
+\index{health@{health}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily int Player\+::health}
+
+\Hypertarget{class_player_a8d5cac4b6439fbe6e36f717b657e311e}\label{class_player_a8d5cac4b6439fbe6e36f717b657e311e} 
+\index{Player@{Player}!inventory@{inventory}}
+\index{inventory@{inventory}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{inventory}{inventory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classitem}{item}} Player\+::inventory\mbox{[}2\mbox{]}}
+
+\Hypertarget{class_player_a0349855298626faed9f05f86965ff689}\label{class_player_a0349855298626faed9f05f86965ff689} 
+\index{Player@{Player}!speed@{speed}}
+\index{speed@{speed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily int Player\+::speed}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{player_8h}{player.\+h}}\item 
+\mbox{\hyperlink{player_8cpp}{player.\+cpp}}\end{DoxyCompactItemize}

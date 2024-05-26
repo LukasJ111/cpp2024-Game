@@ -1,0 +1,41 @@
+\doxysection{item.\+h}
+\hypertarget{item_8h_source}{}\label{item_8h_source}\mbox{\hyperlink{item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ item\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \ item\_h}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texture__manager_8h}{texture\_manager.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classitem}{item}}\{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ SDL\_Texture*\ item\_texture;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ description;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Weapon\ type\ items}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ damage;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ range;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_a344fbf6e3db0d59e0c8ac75cd42ee144}{item}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_ae1792174ea9d664d6413f5ad0de38d74}{\string~item}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitem_ac53cfc460fb383764667fae99f5882e9}{set\_item\_texture}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitem_aac12322b68a04dc8540c4806788dc8b8}{set\_name}}(std::string\ name);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitem_aa788e7f3e067c4110843d39e286b385a}{set\_description}}(std::string\ description);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitem_a88071e23e09f28d744e017285f9e1a24}{set\_weapon\_stats}}(\textcolor{keywordtype}{int}\ damage,\ \textcolor{keywordtype}{int}\ range);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classitem_ab7c2fa653e0f9a565283b60ca325f2a7}{get\_name}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classitem_ad9bbceacaca018d6fe128b467b9ebeff}{get\_description}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitem_a4b9e6acdc803f7cd08346cfd73ec6532}{show\_item}}(SDL\_Renderer*\ ren,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);\ \textcolor{comment}{//\ x,\ y\ -\/\ will\ later\ be\ used\ to\ update\ position\ relative\ to\ playewr}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classitem_a98282481b416aefbec7fa99482298b41}{deal\_damage}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Will\ deal\ damage\ to\ enemy\ type\ objects\ later\ \ \ \ }}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

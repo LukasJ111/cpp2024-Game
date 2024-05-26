@@ -1,0 +1,52 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="main",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge25_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="game_loop::clean",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgame__loop.html#a1c32721239aeb3df003b022f7bbc5e6b",tooltip=" "];
+  Node1 -> Node3 [id="edge26_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="game_loop::handle_events",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgame__loop.html#a2461380efd86164848e2b63c02b2aba8",tooltip=" "];
+  Node1 -> Node4 [id="edge27_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="game_loop::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgame__loop.html#a11aff41d64c5188465455946aec5352c",tooltip=" "];
+  Node4 -> Node5 [id="edge28_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="audioCallback",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$game__loop_8cpp.html#a38cb37369ef016074c5222bb8216d0db",tooltip=" "];
+  Node4 -> Node6 [id="edge29_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Map::LoadMap",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_map.html#ae629159100626b3a3d077c0c54edfba5",tooltip=" "];
+  Node6 -> Node7 [id="edge30_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Map::AddTile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_map.html#aa6d6edde66fe2b1005f96661c9dd807c",tooltip=" "];
+  Node4 -> Node8 [id="edge31_Node000004_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="player",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$game__loop_8cpp.html#aa397a441342b7b79e05883b8ad969544",tooltip=" "];
+  Node1 -> Node9 [id="edge32_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="game_loop::render",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgame__loop.html#a1d80aa62bc13842b190dfe3b5e4e8c52",tooltip=" "];
+  Node9 -> Node5 [id="edge33_Node000009_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node10 [id="edge34_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="colliders",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$game__loop_8cpp.html#a9cad3c63b52c9eed82691da425c45086",tooltip=" "];
+  Node9 -> Node11 [id="edge35_Node000009_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="texture_manager::Draw",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtexture__manager.html#a09266ab923a45e053441b15d2c6678f3",tooltip=" "];
+  Node9 -> Node12 [id="edge36_Node000009_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="texture_manager::LoadTexture",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtexture__manager.html#afbbf703c4b43b7f0599696c2e58466c6",tooltip=" "];
+  Node9 -> Node13 [id="edge37_Node000009_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="players",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$game__loop_8cpp.html#a4e8cfccf5f46dd3671244ae8972a908b",tooltip=" "];
+  Node9 -> Node14 [id="edge38_Node000009_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="renderNightOverlay",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$game__loop_8cpp.html#af6e0ece6a0c08050607a153f50bb0d81",tooltip=" "];
+  Node9 -> Node15 [id="edge39_Node000009_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="tiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$game__loop_8cpp.html#a5ab460f27fc227b610329118b46486e6",tooltip=" "];
+  Node1 -> Node16 [id="edge40_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="game_loop::running",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgame__loop.html#a5afaa08d2c8d981dbfcf795537c58daf",tooltip=" "];
+  Node1 -> Node17 [id="edge41_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="game_loop::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgame__loop.html#a8b81209a0ea33afd1d01f31382748dcf",tooltip=" "];
+  Node17 -> Node18 [id="edge42_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="Collision::AABB",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_collision.html#a4c1f3d2b5230ffb04894207b4b8cebcd",tooltip=" "];
+  Node17 -> Node10 [id="edge43_Node000017_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node19 [id="edge44_Node000017_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="Map::getScaledSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_map.html#afe1a00d99e88dca6172a0c8356efb677",tooltip=" "];
+  Node17 -> Node8 [id="edge45_Node000017_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node20 [id="edge46_Node000017_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="game_loop::spawnRat",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgame__loop.html#a08d481373977d90825967222aaf14977",tooltip=" "];
+  Node20 -> Node12 [id="edge47_Node000020_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node20 -> Node8 [id="edge48_Node000020_Node000008",color="steelblue1",style="solid",tooltip=" "];
+}
