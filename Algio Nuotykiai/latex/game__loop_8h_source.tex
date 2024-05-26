@@ -1,0 +1,68 @@
+\doxysection{game\+\_\+loop.\+h}
+\hypertarget{game__loop_8h_source}{}\label{game__loop_8h_source}\mbox{\hyperlink{game__loop_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ game\_loop\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ game\_loop\_h}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector2_d_8h}{Vector2D.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }ColliderComponent;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame__loop}{game\_loop}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{classgame__loop_a4d6c6bd6a5e1d0b28a5dc31cf3edba93}{renderTarget}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classgame__loop_a513a826cc9f03e88673a2e542f68ac42}{game\_loop}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classgame__loop_a3cbde23970ac396355ce00aa180c5a52}{\string~game\_loop}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__loop_a11aff41d64c5188465455946aec5352c}{init}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title,\ \textcolor{keywordtype}{int}\ x\_pos,\ \textcolor{keywordtype}{int}\ y\_pos,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ fullscreen);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__loop_a8b81209a0ea33afd1d01f31382748dcf}{update}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__loop_a1d80aa62bc13842b190dfe3b5e4e8c52}{render}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__loop_a2461380efd86164848e2b63c02b2aba8}{handle\_events}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__loop_a1c32721239aeb3df003b022f7bbc5e6b}{clean}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__loop_a5afaa08d2c8d981dbfcf795537c58daf}{running}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgame__loop_a548667de13e16a17a6d3ded7882a14ad}{is\_running}};\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_Renderer\ *\mbox{\hyperlink{classgame__loop_ac2c9e014f2f8eda8b432bd2aeed1f16e}{renderer}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_Event\ \mbox{\hyperlink{classgame__loop_abff9c44adf093eedcee23e4381296969}{event}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__loop_a548667de13e16a17a6d3ded7882a14ad}{is\_running}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_Rect\ \mbox{\hyperlink{classgame__loop_a69398f5966931fd8e815fa89f56970d4}{camera}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgame__loop_1_1_rat}{Rat}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \mbox{\hyperlink{structgame__loop_1_1_rat_aa956fdb807a70738b06a3b888a671138}{position}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structgame__loop_1_1_rat_aeb2d78db8e45f158c9a1d6d55ddc3e19}{texture}};}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79}{groupLabels}}\ :\ std::size\_t\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a52ee229ed89d3a95e0c1a6fa5ee8e968}{groupMap}},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a591c3ffebb232871f7a0b5111b7d3c37}{groupPlayers}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae8520b514f06db035b6b91d5d211de5e}{groupColliders}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae4bc4d201ab2974ed4cb08bd06a5f9c1}{groupRats}}}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgame__loop_a9bae168773d0d3364bc9b5fb017b31d4}{gameOverSoundPlayed}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00044\ \ \ \ \ Uint8*\ \mbox{\hyperlink{classgame__loop_a76a9dbd764ea7910381bf8be3d4a8716}{gameOverAudioBuffer}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00045\ \ \ \ \ Uint32\ \mbox{\hyperlink{classgame__loop_ae3bb1ee0e99f2586a87a3286f54ced1e}{gameOverAudioLength}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ audio}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgame__loop_acd470be75cf91c7c5514ae226fb970dd}{volume}};\ }
+\DoxyCodeLine{00049\ \ \ \ \ SDL\_AudioDeviceID\ \mbox{\hyperlink{classgame__loop_aef091eed87573a1d493886c16672d301}{audioDevice}};}
+\DoxyCodeLine{00050\ \ \ \ \ Uint8*\ \mbox{\hyperlink{classgame__loop_a3b490d0b7749818c2806ec834d069fda}{audioBuffer}};}
+\DoxyCodeLine{00051\ \ \ \ \ Uint32\ \mbox{\hyperlink{classgame__loop_aa3f8e195ab3ebd39ce641341b6bf5306}{audioLength}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ rat}}
+\DoxyCodeLine{00054\ \ \ \ \ Uint32\ \mbox{\hyperlink{classgame__loop_afcf4331303e7cc13412eef2013a3623d}{ratSpawnTimer}}\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Uint32\ \mbox{\hyperlink{classgame__loop_a8740c6eb2527120e6c46b3f7c7bad413}{ratSpawnInterval}}\ =\ 2500;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame__loop_a08d481373977d90825967222aaf14977}{spawnRat}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ SDL\_Window\ *window;}
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<Rat>\ rats;}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

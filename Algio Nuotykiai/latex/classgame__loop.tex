@@ -1,0 +1,277 @@
+\doxysection{game\+\_\+loop Class Reference}
+\hypertarget{classgame__loop}{}\label{classgame__loop}\index{game\_loop@{game\_loop}}
+
+
+{\ttfamily \#include $<$game\+\_\+loop.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgame__loop_1_1_rat}{Rat}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79}{group\+Labels}} \+: std\+::size\+\_\+t \{ \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a52ee229ed89d3a95e0c1a6fa5ee8e968}{group\+Map}}
+, \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a591c3ffebb232871f7a0b5111b7d3c37}{group\+Players}}
+, \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae8520b514f06db035b6b91d5d211de5e}{group\+Colliders}}
+, \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae4bc4d201ab2974ed4cb08bd06a5f9c1}{group\+Rats}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame__loop_a513a826cc9f03e88673a2e542f68ac42}{game\+\_\+loop}} ()
+\item 
+\mbox{\hyperlink{classgame__loop_a3cbde23970ac396355ce00aa180c5a52}{\texorpdfstring{$\sim$}{\string~}game\+\_\+loop}} ()
+\item 
+void \mbox{\hyperlink{classgame__loop_a11aff41d64c5188465455946aec5352c}{init}} (const char \texorpdfstring{$\ast$}{*}title, int x\+\_\+pos, int y\+\_\+pos, int width, int height, bool fullscreen)
+\item 
+void \mbox{\hyperlink{classgame__loop_a8b81209a0ea33afd1d01f31382748dcf}{update}} ()
+\item 
+void \mbox{\hyperlink{classgame__loop_a1d80aa62bc13842b190dfe3b5e4e8c52}{render}} ()
+\item 
+void \mbox{\hyperlink{classgame__loop_a2461380efd86164848e2b63c02b2aba8}{handle\+\_\+events}} ()
+\item 
+void \mbox{\hyperlink{classgame__loop_a1c32721239aeb3df003b022f7bbc5e6b}{clean}} ()
+\item 
+bool \mbox{\hyperlink{classgame__loop_a5afaa08d2c8d981dbfcf795537c58daf}{running}} ()
+\item 
+void \mbox{\hyperlink{classgame__loop_a08d481373977d90825967222aaf14977}{spawn\+Rat}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__loop_a4d6c6bd6a5e1d0b28a5dc31cf3edba93}{render\+Target}} = nullptr
+\item 
+bool \mbox{\hyperlink{classgame__loop_a9bae168773d0d3364bc9b5fb017b31d4}{game\+Over\+Sound\+Played}} = false
+\item 
+Uint8 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__loop_a76a9dbd764ea7910381bf8be3d4a8716}{game\+Over\+Audio\+Buffer}} = nullptr
+\item 
+Uint32 \mbox{\hyperlink{classgame__loop_ae3bb1ee0e99f2586a87a3286f54ced1e}{game\+Over\+Audio\+Length}}
+\item 
+float \mbox{\hyperlink{classgame__loop_acd470be75cf91c7c5514ae226fb970dd}{volume}}
+\item 
+SDL\+\_\+\+Audio\+Device\+ID \mbox{\hyperlink{classgame__loop_aef091eed87573a1d493886c16672d301}{audio\+Device}}
+\item 
+Uint8 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__loop_a3b490d0b7749818c2806ec834d069fda}{audio\+Buffer}}
+\item 
+Uint32 \mbox{\hyperlink{classgame__loop_aa3f8e195ab3ebd39ce641341b6bf5306}{audio\+Length}}
+\item 
+Uint32 \mbox{\hyperlink{classgame__loop_afcf4331303e7cc13412eef2013a3623d}{rat\+Spawn\+Timer}} = 0
+\item 
+const Uint32 \mbox{\hyperlink{classgame__loop_a8740c6eb2527120e6c46b3f7c7bad413}{rat\+Spawn\+Interval}} = 2500
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame__loop_ac2c9e014f2f8eda8b432bd2aeed1f16e}{renderer}} = nullptr
+\item 
+static SDL\+\_\+\+Event \mbox{\hyperlink{classgame__loop_abff9c44adf093eedcee23e4381296969}{event}}
+\item 
+static bool \mbox{\hyperlink{classgame__loop_a548667de13e16a17a6d3ded7882a14ad}{is\+\_\+running}} = false
+\item 
+static SDL\+\_\+\+Rect \mbox{\hyperlink{classgame__loop_a69398f5966931fd8e815fa89f56970d4}{camera}} = \{0, 0, 800, 640\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classgame__loop_adede71777e82b0ba78e72fe7c1996c79}\label{classgame__loop_adede71777e82b0ba78e72fe7c1996c79} 
+\index{game\_loop@{game\_loop}!groupLabels@{groupLabels}}
+\index{groupLabels@{groupLabels}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{groupLabels}{groupLabels}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79}{game\+\_\+loop\+::group\+Labels}} \+: std\+::size\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{groupMap@{groupMap}!game\_loop@{game\_loop}}\index{game\_loop@{game\_loop}!groupMap@{groupMap}}}\Hypertarget{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a52ee229ed89d3a95e0c1a6fa5ee8e968}\label{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a52ee229ed89d3a95e0c1a6fa5ee8e968} 
+group\+Map&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{groupPlayers@{groupPlayers}!game\_loop@{game\_loop}}\index{game\_loop@{game\_loop}!groupPlayers@{groupPlayers}}}\Hypertarget{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a591c3ffebb232871f7a0b5111b7d3c37}\label{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a591c3ffebb232871f7a0b5111b7d3c37} 
+group\+Players&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{groupColliders@{groupColliders}!game\_loop@{game\_loop}}\index{game\_loop@{game\_loop}!groupColliders@{groupColliders}}}\Hypertarget{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae8520b514f06db035b6b91d5d211de5e}\label{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae8520b514f06db035b6b91d5d211de5e} 
+group\+Colliders&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{groupRats@{groupRats}!game\_loop@{game\_loop}}\index{game\_loop@{game\_loop}!groupRats@{groupRats}}}\Hypertarget{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae4bc4d201ab2974ed4cb08bd06a5f9c1}\label{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae4bc4d201ab2974ed4cb08bd06a5f9c1} 
+group\+Rats&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgame__loop_a513a826cc9f03e88673a2e542f68ac42}\label{classgame__loop_a513a826cc9f03e88673a2e542f68ac42} 
+\index{game\_loop@{game\_loop}!game\_loop@{game\_loop}}
+\index{game\_loop@{game\_loop}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{game\_loop()}{game\_loop()}}
+{\footnotesize\ttfamily game\+\_\+loop\+::game\+\_\+loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classgame__loop_a3cbde23970ac396355ce00aa180c5a52}\label{classgame__loop_a3cbde23970ac396355ce00aa180c5a52} 
+\index{game\_loop@{game\_loop}!````~game\_loop@{\texorpdfstring{$\sim$}{\string~}game\_loop}}
+\index{````~game\_loop@{\texorpdfstring{$\sim$}{\string~}game\_loop}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}game\_loop()}{\string~game\_loop()}}
+{\footnotesize\ttfamily game\+\_\+loop\+::\texorpdfstring{$\sim$}{\string~}game\+\_\+loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgame__loop_a1c32721239aeb3df003b022f7bbc5e6b}\label{classgame__loop_a1c32721239aeb3df003b022f7bbc5e6b} 
+\index{game\_loop@{game\_loop}!clean@{clean}}
+\index{clean@{clean}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void game\+\_\+loop\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 0
+\Hypertarget{classgame__loop_a2461380efd86164848e2b63c02b2aba8}\label{classgame__loop_a2461380efd86164848e2b63c02b2aba8} 
+\index{game\_loop@{game\_loop}!handle\_events@{handle\_events}}
+\index{handle\_events@{handle\_events}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{handle\_events()}{handle\_events()}}
+{\footnotesize\ttfamily void game\+\_\+loop\+::handle\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{classgame__loop_a11aff41d64c5188465455946aec5352c}\label{classgame__loop_a11aff41d64c5188465455946aec5352c} 
+\index{game\_loop@{game\_loop}!init@{init}}
+\index{init@{init}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void game\+\_\+loop\+::init (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title,  }\item[{int}]{x\+\_\+pos,  }\item[{int}]{y\+\_\+pos,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{bool}]{fullscreen }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{classgame__loop_a1d80aa62bc13842b190dfe3b5e4e8c52}\label{classgame__loop_a1d80aa62bc13842b190dfe3b5e4e8c52} 
+\index{game\_loop@{game\_loop}!render@{render}}
+\index{render@{render}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void game\+\_\+loop\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{classgame__loop_a5afaa08d2c8d981dbfcf795537c58daf}\label{classgame__loop_a5afaa08d2c8d981dbfcf795537c58daf} 
+\index{game\_loop@{game\_loop}!running@{running}}
+\index{running@{running}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{running()}{running()}}
+{\footnotesize\ttfamily bool game\+\_\+loop\+::running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{classgame__loop_a08d481373977d90825967222aaf14977}\label{classgame__loop_a08d481373977d90825967222aaf14977} 
+\index{game\_loop@{game\_loop}!spawnRat@{spawnRat}}
+\index{spawnRat@{spawnRat}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{spawnRat()}{spawnRat()}}
+{\footnotesize\ttfamily void game\+\_\+loop\+::spawn\+Rat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{classgame__loop_a8b81209a0ea33afd1d01f31382748dcf}\label{classgame__loop_a8b81209a0ea33afd1d01f31382748dcf} 
+\index{game\_loop@{game\_loop}!update@{update}}
+\index{update@{update}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void game\+\_\+loop\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classgame__loop_a3b490d0b7749818c2806ec834d069fda}\label{classgame__loop_a3b490d0b7749818c2806ec834d069fda} 
+\index{game\_loop@{game\_loop}!audioBuffer@{audioBuffer}}
+\index{audioBuffer@{audioBuffer}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{audioBuffer}{audioBuffer}}
+{\footnotesize\ttfamily Uint8\texorpdfstring{$\ast$}{*} game\+\_\+loop\+::audio\+Buffer}
+
+\Hypertarget{classgame__loop_aef091eed87573a1d493886c16672d301}\label{classgame__loop_aef091eed87573a1d493886c16672d301} 
+\index{game\_loop@{game\_loop}!audioDevice@{audioDevice}}
+\index{audioDevice@{audioDevice}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{audioDevice}{audioDevice}}
+{\footnotesize\ttfamily SDL\+\_\+\+Audio\+Device\+ID game\+\_\+loop\+::audio\+Device}
+
+\Hypertarget{classgame__loop_aa3f8e195ab3ebd39ce641341b6bf5306}\label{classgame__loop_aa3f8e195ab3ebd39ce641341b6bf5306} 
+\index{game\_loop@{game\_loop}!audioLength@{audioLength}}
+\index{audioLength@{audioLength}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{audioLength}{audioLength}}
+{\footnotesize\ttfamily Uint32 game\+\_\+loop\+::audio\+Length}
+
+\Hypertarget{classgame__loop_a69398f5966931fd8e815fa89f56970d4}\label{classgame__loop_a69398f5966931fd8e815fa89f56970d4} 
+\index{game\_loop@{game\_loop}!camera@{camera}}
+\index{camera@{camera}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect game\+\_\+loop\+::camera = \{0, 0, 800, 640\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__loop_abff9c44adf093eedcee23e4381296969}\label{classgame__loop_abff9c44adf093eedcee23e4381296969} 
+\index{game\_loop@{game\_loop}!event@{event}}
+\index{event@{event}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily SDL\+\_\+\+Event game\+\_\+loop\+::event\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__loop_a76a9dbd764ea7910381bf8be3d4a8716}\label{classgame__loop_a76a9dbd764ea7910381bf8be3d4a8716} 
+\index{game\_loop@{game\_loop}!gameOverAudioBuffer@{gameOverAudioBuffer}}
+\index{gameOverAudioBuffer@{gameOverAudioBuffer}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{gameOverAudioBuffer}{gameOverAudioBuffer}}
+{\footnotesize\ttfamily Uint8\texorpdfstring{$\ast$}{*} game\+\_\+loop\+::game\+Over\+Audio\+Buffer = nullptr}
+
+\Hypertarget{classgame__loop_ae3bb1ee0e99f2586a87a3286f54ced1e}\label{classgame__loop_ae3bb1ee0e99f2586a87a3286f54ced1e} 
+\index{game\_loop@{game\_loop}!gameOverAudioLength@{gameOverAudioLength}}
+\index{gameOverAudioLength@{gameOverAudioLength}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{gameOverAudioLength}{gameOverAudioLength}}
+{\footnotesize\ttfamily Uint32 game\+\_\+loop\+::game\+Over\+Audio\+Length}
+
+\Hypertarget{classgame__loop_a9bae168773d0d3364bc9b5fb017b31d4}\label{classgame__loop_a9bae168773d0d3364bc9b5fb017b31d4} 
+\index{game\_loop@{game\_loop}!gameOverSoundPlayed@{gameOverSoundPlayed}}
+\index{gameOverSoundPlayed@{gameOverSoundPlayed}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{gameOverSoundPlayed}{gameOverSoundPlayed}}
+{\footnotesize\ttfamily bool game\+\_\+loop\+::game\+Over\+Sound\+Played = false}
+
+\Hypertarget{classgame__loop_a548667de13e16a17a6d3ded7882a14ad}\label{classgame__loop_a548667de13e16a17a6d3ded7882a14ad} 
+\index{game\_loop@{game\_loop}!is\_running@{is\_running}}
+\index{is\_running@{is\_running}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{is\_running}{is\_running}}
+{\footnotesize\ttfamily bool game\+\_\+loop\+::is\+\_\+running = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__loop_a8740c6eb2527120e6c46b3f7c7bad413}\label{classgame__loop_a8740c6eb2527120e6c46b3f7c7bad413} 
+\index{game\_loop@{game\_loop}!ratSpawnInterval@{ratSpawnInterval}}
+\index{ratSpawnInterval@{ratSpawnInterval}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{ratSpawnInterval}{ratSpawnInterval}}
+{\footnotesize\ttfamily const Uint32 game\+\_\+loop\+::rat\+Spawn\+Interval = 2500}
+
+\Hypertarget{classgame__loop_afcf4331303e7cc13412eef2013a3623d}\label{classgame__loop_afcf4331303e7cc13412eef2013a3623d} 
+\index{game\_loop@{game\_loop}!ratSpawnTimer@{ratSpawnTimer}}
+\index{ratSpawnTimer@{ratSpawnTimer}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{ratSpawnTimer}{ratSpawnTimer}}
+{\footnotesize\ttfamily Uint32 game\+\_\+loop\+::rat\+Spawn\+Timer = 0}
+
+\Hypertarget{classgame__loop_ac2c9e014f2f8eda8b432bd2aeed1f16e}\label{classgame__loop_ac2c9e014f2f8eda8b432bd2aeed1f16e} 
+\index{game\_loop@{game\_loop}!renderer@{renderer}}
+\index{renderer@{renderer}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} game\+\_\+loop\+::renderer = nullptr\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classgame__loop_a4d6c6bd6a5e1d0b28a5dc31cf3edba93}\label{classgame__loop_a4d6c6bd6a5e1d0b28a5dc31cf3edba93} 
+\index{game\_loop@{game\_loop}!renderTarget@{renderTarget}}
+\index{renderTarget@{renderTarget}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{renderTarget}{renderTarget}}
+{\footnotesize\ttfamily SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} game\+\_\+loop\+::render\+Target = nullptr}
+
+\Hypertarget{classgame__loop_acd470be75cf91c7c5514ae226fb970dd}\label{classgame__loop_acd470be75cf91c7c5514ae226fb970dd} 
+\index{game\_loop@{game\_loop}!volume@{volume}}
+\index{volume@{volume}!game\_loop@{game\_loop}}
+\doxysubsubsection{\texorpdfstring{volume}{volume}}
+{\footnotesize\ttfamily float game\+\_\+loop\+::volume}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game__loop_8h}{game\+\_\+loop.\+h}}\item 
+\mbox{\hyperlink{game__loop_8cpp}{game\+\_\+loop.\+cpp}}\end{DoxyCompactItemize}

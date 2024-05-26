@@ -1,0 +1,104 @@
+\doxysection{game\+\_\+loop.\+cpp File Reference}
+\hypertarget{game__loop_8cpp}{}\label{game__loop_8cpp}\index{game\_loop.cpp@{game\_loop.cpp}}
+{\ttfamily \#include "{}game\+\_\+loop.\+h"{}}\newline
+{\ttfamily \#include "{}texture\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}player.\+h"{}}\newline
+{\ttfamily \#include "{}Map.\+h"{}}\newline
+{\ttfamily \#include "{}Collision.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+audio.\+h"{}}\newline
+{\ttfamily \#include "{}ECS/\+Components.\+h"{}}\newline
+{\ttfamily \#include "{}ECS/\+ECS.\+h"{}}\newline
+{\ttfamily \#include "{}Vector2\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Menu.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+image.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for game\+\_\+loop.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \& \mbox{\hyperlink{game__loop_8cpp_aa397a441342b7b79e05883b8ad969544}{player}} (manager.\+add\+Entity())
+\item 
+void \mbox{\hyperlink{game__loop_8cpp_a38cb37369ef016074c5222bb8216d0db}{audio\+Callback}} (void \texorpdfstring{$\ast$}{*}userdata, Uint8 \texorpdfstring{$\ast$}{*}stream, int len)
+\item 
+void \mbox{\hyperlink{game__loop_8cpp_af6e0ece6a0c08050607a153f50bb0d81}{render\+Night\+Overlay}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\item 
+auto \& \mbox{\hyperlink{game__loop_8cpp_a5ab460f27fc227b610329118b46486e6}{tiles}} (manager.\+get\+Group(\mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a52ee229ed89d3a95e0c1a6fa5ee8e968}{game\+\_\+loop\+::group\+Map}}))
+\item 
+auto \& \mbox{\hyperlink{game__loop_8cpp_a4e8cfccf5f46dd3671244ae8972a908b}{players}} (manager.\+get\+Group(\mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79a591c3ffebb232871f7a0b5111b7d3c37}{game\+\_\+loop\+::group\+Players}}))
+\item 
+auto \& \mbox{\hyperlink{game__loop_8cpp_a9cad3c63b52c9eed82691da425c45086}{colliders}} (manager.\+get\+Group(\mbox{\hyperlink{classgame__loop_adede71777e82b0ba78e72fe7c1996c79ae8520b514f06db035b6b91d5d211de5e}{game\+\_\+loop\+::group\+Colliders}}))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game__loop_8cpp_a7bdaf8655b48f0d7994eb54ec1da4981}{map}}
+\item 
+Manager \mbox{\hyperlink{game__loop_8cpp_a8b88105956ea929e3c74c65791e92c6f}{manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game__loop_8cpp_a38cb37369ef016074c5222bb8216d0db}\label{game__loop_8cpp_a38cb37369ef016074c5222bb8216d0db} 
+\index{game\_loop.cpp@{game\_loop.cpp}!audioCallback@{audioCallback}}
+\index{audioCallback@{audioCallback}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{audioCallback()}{audioCallback()}}
+{\footnotesize\ttfamily void audio\+Callback (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{userdata,  }\item[{Uint8 \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{game__loop_8cpp_a9cad3c63b52c9eed82691da425c45086}\label{game__loop_8cpp_a9cad3c63b52c9eed82691da425c45086} 
+\index{game\_loop.cpp@{game\_loop.cpp}!colliders@{colliders}}
+\index{colliders@{colliders}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{colliders()}{colliders()}}
+{\footnotesize\ttfamily auto \& colliders (\begin{DoxyParamCaption}\item[{manager.}]{get\+Groupgame\+\_\+loop\+::group\+Colliders }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{game__loop_8cpp_aa397a441342b7b79e05883b8ad969544}\label{game__loop_8cpp_aa397a441342b7b79e05883b8ad969544} 
+\index{game\_loop.cpp@{game\_loop.cpp}!player@{player}}
+\index{player@{player}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{player()}{player()}}
+{\footnotesize\ttfamily auto \& player (\begin{DoxyParamCaption}\item[{manager.}]{add\+Entity() }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{game__loop_8cpp_a4e8cfccf5f46dd3671244ae8972a908b}\label{game__loop_8cpp_a4e8cfccf5f46dd3671244ae8972a908b} 
+\index{game\_loop.cpp@{game\_loop.cpp}!players@{players}}
+\index{players@{players}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{players()}{players()}}
+{\footnotesize\ttfamily auto \& players (\begin{DoxyParamCaption}\item[{manager.}]{get\+Groupgame\+\_\+loop\+::group\+Players }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{game__loop_8cpp_af6e0ece6a0c08050607a153f50bb0d81}\label{game__loop_8cpp_af6e0ece6a0c08050607a153f50bb0d81} 
+\index{game\_loop.cpp@{game\_loop.cpp}!renderNightOverlay@{renderNightOverlay}}
+\index{renderNightOverlay@{renderNightOverlay}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{renderNightOverlay()}{renderNightOverlay()}}
+{\footnotesize\ttfamily void render\+Night\+Overlay (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{game__loop_8cpp_a5ab460f27fc227b610329118b46486e6}\label{game__loop_8cpp_a5ab460f27fc227b610329118b46486e6} 
+\index{game\_loop.cpp@{game\_loop.cpp}!tiles@{tiles}}
+\index{tiles@{tiles}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{tiles()}{tiles()}}
+{\footnotesize\ttfamily auto \& tiles (\begin{DoxyParamCaption}\item[{manager.}]{get\+Groupgame\+\_\+loop\+::group\+Map }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{game__loop_8cpp_a8b88105956ea929e3c74c65791e92c6f}\label{game__loop_8cpp_a8b88105956ea929e3c74c65791e92c6f} 
+\index{game\_loop.cpp@{game\_loop.cpp}!manager@{manager}}
+\index{manager@{manager}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily Manager manager}
+
+\Hypertarget{game__loop_8cpp_a7bdaf8655b48f0d7994eb54ec1da4981}\label{game__loop_8cpp_a7bdaf8655b48f0d7994eb54ec1da4981} 
+\index{game\_loop.cpp@{game\_loop.cpp}!map@{map}}
+\index{map@{map}!game\_loop.cpp@{game\_loop.cpp}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map}{Map}}\texorpdfstring{$\ast$}{*} map}
+

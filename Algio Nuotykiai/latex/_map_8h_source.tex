@@ -1,0 +1,26 @@
+\doxysection{Map.\+h}
+\hypertarget{_map_8h_source}{}\label{_map_8h_source}\mbox{\hyperlink{_map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_map}{Map}}\{}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_map_ad38cdac6881b9b84982d6d8fcc9f04ad}{Map}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mfp,\ \textcolor{keywordtype}{int}\ ms,\ \textcolor{keywordtype}{int}\ ts);}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_map_aa403fbe09394ccf39747588f5168e3b2}{\string~Map}}();}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_ae629159100626b3a3d077c0c54edfba5}{LoadMap}}(std::string\ path,\ \textcolor{keywordtype}{int}\ sizeX,\ \textcolor{keywordtype}{int}\ sizeY);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_aa6d6edde66fe2b1005f96661c9dd807c}{AddTile}}(\textcolor{keywordtype}{int}\ srcX,\ \textcolor{keywordtype}{int}\ srcY,\ \textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_map_afe1a00d99e88dca6172a0c8356efb677}{getScaledSize}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_map_ae87c26072855e425c8d73dfb92b7ec9b}{getMapFilePath}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mapFilePath;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ mapScale;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ tileSize;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ scaledSize;\ }
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+
+\end{DoxyCode}
