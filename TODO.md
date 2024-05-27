@@ -3,5 +3,6 @@
 - Padaryt įskaitomesnį kodą.
 - Pridėt daugiau lygių/"gameplay".
 - Pridėk daugiau interaktyvumo.
-- Geriau implimentuot žemėlapių užkrovimą
+- Geriau implimentuot žemėlapių užkrovimą.
+- Standartizuoti naming conventionus (kilo nesutarimai).
 - ...
