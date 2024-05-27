@@ -1,3 +1,10 @@
+# NAUJA INFORMACIJA!
+
+Skaidrės: https://docs.google.com/presentation/d/1x6JBxAxy-klwgXVb0iImNz5uJLxGfCz4/edit?usp=drive_link&ouid=102098508887788281444&rtpof=true&sd=true
+
+Installeris (.exe pavidalu): https://drive.google.com/file/d/17yt5I05OzDK-2qiTnBF_Y27TINu6PGSp/view
+
+
 # C++ Komandinis projektas - Žaidimas
 
 Mes planuojame sukurti žaidimą pagrinde naudojantis SDL2 grafine biblioteka.
