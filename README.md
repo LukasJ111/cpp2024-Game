@@ -4,6 +4,27 @@ Skaidrės: https://docs.google.com/presentation/d/1x6JBxAxy-klwgXVb0iImNz5uJLxGf
 
 Installeris (.exe pavidalu): https://drive.google.com/file/d/17yt5I05OzDK-2qiTnBF_Y27TINu6PGSp/view
 
+# Kompiliavimasis ir paleidimas.
+
+Padaryta, jog nereiktų vestis solutiono.
+
+1. Nuklonuoktie repozitoriją.
+```sh
+git@github.com:LukasJ111/cpp2024-Game.git
+```
+
+2. Nuekit į direktoriją į kurią atklonavot projektą.
+
+3. Nuekit į "Algio Nuotykiai" folderį.
+
+4. Sukompiliuokit projektą su **make** (jei naudojat Windows operacinę sistemą gali būt, kad reiks **mingw32-make** ar kažkas panašaus).
+
+5. Pasileiskit žaidimą spausdami ant "game.exe" failo arba per konsolę su 
+```sh
+./game.exe
+```
+
+6. Dabartinė versija yra demo ir patiems buildinant automatiškai bus debug mode (pasileis konsolė backgrounde ir žaidimas neis per visą ekraną).
 
 # C++ Komandinis projektas - Žaidimas
 
