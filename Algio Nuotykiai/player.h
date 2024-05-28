@@ -5,7 +5,7 @@
 #include <string>
 #include "item.h"
 #include <SDL2/SDL_events.h>
-#include "game_object.h"
+#include "GameObject.h"
 
 class Player : public game_object {
 

@@ -1,7 +1,7 @@
 #ifndef KeyboardController_H
 #define KeyboardController_H
 
-#include "../game_loop.h"
+#include "../GameLoop.h"
 #include "ECS.h"
 #include "Components.h"
 

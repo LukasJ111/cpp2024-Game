@@ -1,5 +1,5 @@
 #include "Map.h"
-#include "game_loop.h"
+#include "GameLoop.h"
 #include <fstream>
 #include "ECS\ECS.h"
 #include "ECS\Components.h"

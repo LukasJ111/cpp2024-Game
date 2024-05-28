@@ -1,5 +1,5 @@
-#include "game_loop.h"
-#include "texture_manager.h"
+#include "GameLoop.h"
+#include "TextureManager.h"
 #include "player.h"
 #include "Map.h"
 #include "Collision.h"

@@ -1,4 +1,4 @@
-#include "game_loop.h"
+#include "GameLoop.h"
 #include "Menu.h"
 
 game_loop *game = nullptr;

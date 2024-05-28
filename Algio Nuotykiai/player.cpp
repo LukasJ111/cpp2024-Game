@@ -1,4 +1,4 @@
-#include "player.h"
+#include "Player.h"
 #include "item.h"
 
 Player::Player(const char* texturesheet, int x, int y)

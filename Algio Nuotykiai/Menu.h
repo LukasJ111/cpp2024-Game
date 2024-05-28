@@ -5,7 +5,7 @@
 #ifndef CPP2024_GAME_PONULIO_MENU_H
 #define CPP2024_GAME_PONULIO_MENU_H
 #include "SDL2/SDL_rect.h"
-#include "texture_manager.h"
+#include "TextureManager.h"
 
 class Menu {
 public:

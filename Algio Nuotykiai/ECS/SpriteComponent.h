@@ -4,7 +4,7 @@
 
 #include "Components.h"
 #include "SDL.h"
-#include "../texture_manager.h"
+#include "../TextureManager.h"
 #include "Animation.h"
 #include <map>
 

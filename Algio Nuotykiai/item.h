@@ -1,7 +1,7 @@
 #ifndef item_h
 #define  item_h
 
-#include "texture_manager.h"
+#include "TextureManager.h"
 #include <string>
 
     class item{
